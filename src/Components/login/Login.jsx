@@ -13,11 +13,12 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
-import { Link } from "@mui/material";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
+  const navigate = useNavigate();
   return (
     <Typography
       variant="body2"

@@ -8,6 +8,8 @@ import NotFoundPage from "../Page/NotFoundPage";
 import ProductsPage from "../Page/ProductsPage";
 import RegisterPage from "../Page/RegisterPage";
 import AuthPage from "../Page/AuthPage";
+import Verify from "../Components/register/Verify";
+import Madalka from "../Components/register/Madalka";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -46,6 +48,16 @@ const MainRoutes = () => {
       element: <AboutUs />,
       id: 10,
     },
+    // {
+    //   link: "/verify",
+    //   element: <Verify />,
+    //   id: 11,
+    // },
+    // {
+    //   link: "/modal",
+    //   element: <Madalka />,
+    //   id: 12,
+    // },
   ];
   return (
     <Routes>

@@ -16,22 +16,18 @@ import { useEffect, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useAuth } from "../../contexts/AuthContextProvider";
 
+const pages = [
+  { name: "Home", link: "/", id: 1 },
+  { name: "Store", link: "/products", id: 2 },
+  { name: "About Us", link: "/about", id: 3 },
+  { name: "Admin panel", link: "/admin", id: 4 },
+];
+
+const navigate = useNavigate;
+
 const Navbar = () => {
-  const pages = [
-    { name: "Home", link: "/", id: 1 },
-    { name: "Store", link: "/products", id: 2 },
-    { name: "About Us", link: "/about", id: 3 },
-    { name: "Admin panel", link: "/admin", id: 4 },
-  ];
   const { user, checkAuth, logout } = useAuth();
 
-  React.useEffect(() => {
-    if (localStorage.getItem("token")) {
-      checkAuth();
-    }
-  }, []);
-
-  const navigate = useNavigate;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -170,36 +166,6 @@ const Navbar = () => {
                 </NavLink>
               </>
             )}
-
-            {/* <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem>
-                <NavLink to="/login">
-                  <Typography sx={{ color: "black" }}>Login</Typography>
-                </NavLink>
-              </MenuItem>
-
-              
-              <MenuItem>
-                <NavLink to="/register">
-                  <Typography sx={{ color: "black" }}>Register</Typography>
-                </NavLink>
-              </MenuItem>
-            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

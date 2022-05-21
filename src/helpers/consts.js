@@ -8,8 +8,6 @@ export const ACTIONS = {
     GET_CART: 'GET_CART',
     GET_CART_LENGTH: 'GET_CART_LENGTH',
   };
-  
-
-  // export const JSON_API_PRODUCTS = 'https://comicskatana.herokuapp.com/';
+  export const API = 'https://comicskatana.herokuapp.com/';
 
 export const ADMIN = 'admin@gmail.com';

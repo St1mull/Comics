@@ -10,7 +10,6 @@ import {
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/CrudContextProvider";
-import "../crud/styleCrud.css";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();

@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { createContext, useContext, useState } from 'react';
 import { Route, useNavigate } from 'react-router-dom';
+import { API } from '../helpers/consts';
 
 export const authContext = createContext();
-
-const API = 'https://comicskatana.herokuapp.com/';
 
 export const useAuth = () => {
   return useContext(authContext);
@@ -32,9 +31,8 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-
   async function login(email, password) {
-    // console.log(email, password);
+    console.log(email, password);
     const config = {
       
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -84,6 +82,19 @@ const AuthContextProvider = ({ children }) => {
     }
   }
 
+  async function handleCode(code) {
+
+    const config = {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    };
+
+    let formData = new FormData();
+
+    formData.append('activation_code', code);
+
+    let res = await axios.post(`${API}api/v1/account/activation/`, formData);
+  }
+
   function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
@@ -99,6 +110,7 @@ const AuthContextProvider = ({ children }) => {
         error,
         checkAuth,
         logout,
+        handleCode,
       }}
     >
       {children}
