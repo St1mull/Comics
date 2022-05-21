@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/CrudContextProvider";
+import "../crud/styleCrud.css";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();
@@ -17,11 +18,11 @@ const AddProduct = () => {
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
-    name: "",
+    title: "",
     category: "",
     price: "",
-    description: "",
-    made_in: "",
+    image: "",
+    author: "",
   });
 
   const handleInp = (e) => {
@@ -32,90 +33,103 @@ const AddProduct = () => {
     setProduct(obj);
   };
 
-  const [age, setAge] = React.useState("");
+  // const [age, setAge] = React.useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
 
   return (
-    <Box sx={{ width: "60vw", margin: "10vh auto" }}>
-      <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
-        fullWidth
-        id="outlined-basic"
-        label="Category"
-        variant="outlined"
-        name="category"
-        size="small"
-        onChange={handleInp}
-      />
+    <div className="addProduct">
+      <Box sx={{ width: "60vw", margin: "0 auto" }}>
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="Category"
+          variant="outlined"
+          name="category"
+          size="small"
+          onChange={handleInp}
+        />
 
-      {/* <FormControl fullWidth>
+        {/* <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           // value={age}
           // label="Age"
-          name='category'
+          name="category"
           onChange={handleInp}
         >
-          <MenuItem value={10}>Tables</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={10}>sssss</MenuItem>
+          <MenuItem value={20}>nnnnn</MenuItem>
+          <MenuItem value={30}>qqqqq</MenuItem>
         </Select>
       </FormControl> */}
 
-      <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
-        fullWidth
-        id="outlined-basic"
-        label="Name"
-        variant="outlined"
-        name="name"
-        size="small"
-        onChange={handleInp}
-      />
-      <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
-        fullWidth
-        id="outlined-basic"
-        label="Price"
-        variant="outlined"
-        name="price"
-        size="small"
-        onChange={handleInp}
-      />
-      <TextField
-        sx={{
-          marginBottom: "10px",
-          borderColor: "black",
-          backgroundColor: "whitesmoke",
-        }}
-        fullWidth
-        id="outlined-basic"
-        label="Description"
-        variant="outlined"
-        name="description"
-        size="small"
-        onChange={handleInp}
-      />
-      <TextField
-        sx={{
-          marginBottom: "10px",
-          borderColor: "black",
-          backgroundColor: "whitesmoke",
-        }}
-        fullWidth
-        id="outlined-basic"
-        label="Made in ..."
-        variant="outlined"
-        name="made_in"
-        size="small"
-        onChange={handleInp}
-      />
-      {/* <TextField
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="Title"
+          variant="outlined"
+          name="title"
+          size="small"
+          onChange={handleInp}
+        />
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="Price"
+          variant="outlined"
+          name="price"
+          size="small"
+          onChange={handleInp}
+        />
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="image"
+          variant="outlined"
+          name="image"
+          size="small"
+          onChange={handleInp}
+        />
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="Author"
+          variant="outlined"
+          name="Author"
+          size="small"
+          onChange={handleInp}
+        />
+        {/* <TextField
       
       sx={{marginBottom: '10px', borderColor: 'black',backgroundColor: 'whitesmoke' }}
         fullWidth
@@ -129,21 +143,22 @@ const AddProduct = () => {
       
       /> */}
 
-      <Button
-        sx={{
-          marginBottom: "10px",
-          borderColor: "black",
-          color: "black",
-          backgroundColor: "whitesmoke",
-        }}
-        variant="outlined"
-        fullWidth
-        size="large"
-        onClick={() => addProduct(product)}
-      >
-        Add product
-      </Button>
-    </Box>
+        <Button
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            color: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          variant="outlined"
+          fullWidth
+          size="large"
+          onClick={() => addProduct(product)}
+        >
+          Add product
+        </Button>
+      </Box>
+    </div>
   );
 };
 

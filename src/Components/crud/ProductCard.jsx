@@ -18,8 +18,8 @@ export default function ProductCard({ item }) {
         sx={{ width: "67%" }}
         component="img"
         height="200"
-        image={item.picture}
-        alt={item.name}
+        // image={item.picture}
+        // alt={item.name}
       />
       <CardContent>
         <Typography
@@ -28,13 +28,13 @@ export default function ProductCard({ item }) {
           variant="h5"
           component="div"
         >
-          {item.name}
+          {/* {item.name} */}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {item.description}
+          {/* {item.description} */}
         </Typography>
         <Typography variant="body2" sx={{ color: "black", fontWeight: "bold" }}>
-          {item.price} $
+          {/* {item.price} $ */}
         </Typography>
       </CardContent>
       <CardActions>

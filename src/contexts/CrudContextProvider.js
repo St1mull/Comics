@@ -55,15 +55,15 @@ const CrudContextProvider = ({ children }) => {
     const config ={
       headers: {'Content-Type':'multipart/form-data',
     },
-    };
+  };
+  
+  let newProduct2 = new FormData()
+  newProduct2.append('title', newProduct.title)
+  newProduct2.append('category', newProduct.category)
+  newProduct2.append('price', newProduct.price)
+  newProduct2.append('image', newProduct.image)
+  newProduct2.append('author', newProduct.author)
 
-
-    let newProduct2 = new FormData()
-    newProduct2.append('name', newProduct.name)
-    newProduct2.append('category', newProduct.category)
-    newProduct2.append('price', newProduct.price)
-    newProduct2.append('description', newProduct.description)
-    newProduct2.append('made_in', newProduct.made_in)
 
 
 
@@ -82,15 +82,15 @@ const CrudContextProvider = ({ children }) => {
       headers: {'Content-Type': 'multipart/form-data'},
     };
     let newProduct2 = new FormData()
-    newProduct2.append('name', newProduct.name)
+    newProduct2.append('title', newProduct.title)
     newProduct2.append('category', newProduct.category)
     newProduct2.append('price', newProduct.price)
-    newProduct2.append('description', newProduct.description)
-    newProduct2.append('made_in', newProduct.made_in)
+    newProduct2.append('image', newProduct.image)
+    newProduct2.append('author', newProduct.author)
     newProduct2.append('id', newProduct.id)
     let id = newProduct2.get('id')
     console.log(id);
-    await axios.patch(`${API}${id}/`, newProduct,config);
+    await axios.patch(`${API}${id}/`, newProduct2,config);
     getProducts()
 
   }
