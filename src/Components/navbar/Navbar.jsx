@@ -11,20 +11,27 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect, NavLink, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
-
-const pages = [
-  { name: "Home", link: "/", id: 1 },
-  { name: "Store", link: "/products", id: 2 },
-  { name: "About Us", link: "/about", id: 3 },
-  { name: "Admin panel", link: "/admin", id: 4 },
-];
-
-const navigate = useNavigate;
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 const Navbar = () => {
+  const pages = [
+    { name: "Home", link: "/", id: 1 },
+    { name: "Store", link: "/products", id: 2 },
+    { name: "About Us", link: "/about", id: 3 },
+    { name: "Admin panel", link: "/admin", id: 4 },
+  ];
+  const { user, checkAuth, logout } = useAuth();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
+
+  const navigate = useNavigate;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -137,12 +144,34 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
+            {user ? (
+              <Button
+                color="inherit"
+                sx={{ color: "white" }}
+                onClick={() => {
+                  logout();
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <>
+                <NavLink to="/login">
+                  <Button color="inherit" sx={{ color: "white" }}>
+                    Login
+                  </Button>
+                </NavLink>
+
+                <NavLink to="/register">
+                  <Button color="inherit" sx={{ color: "white" }}>
+                    Register
+                  </Button>
+                </NavLink>
+              </>
+            )}
+
+            {/* <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -164,20 +193,13 @@ const Navbar = () => {
                 </NavLink>
               </MenuItem>
 
-              {/* <MenuItem>
-                <Typography
-
-                //  onClick={}
-                >
-                  Logout
-                </Typography>
-              </MenuItem> */}
+              
               <MenuItem>
                 <NavLink to="/register">
                   <Typography sx={{ color: "black" }}>Register</Typography>
                 </NavLink>
               </MenuItem>
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../context/CrudContextProvider";
 
-const EditProduct = () => {
+const EditCard = () => {
   const { getProductDetails, productDetails, saveEditedProduct } =
     useProducts();
 
@@ -117,10 +117,10 @@ const EditProduct = () => {
         size="large"
         onClick={() => saveEditedProduct(product)}
       >
-        Add product
+        Edit product
       </Button>
     </Box>
   );
 };
 
-export default EditProduct;
+export default EditCard;

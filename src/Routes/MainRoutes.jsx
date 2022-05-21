@@ -44,7 +44,7 @@ const MainRoutes = () => {
     {
       link: "/about",
       element: <AboutUs />,
-      id: 9,
+      id: 10,
     },
   ];
   return (

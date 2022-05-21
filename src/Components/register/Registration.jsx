@@ -12,7 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { authContext, useAuth } from "../contexts/AuthContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 function Copyright(props) {
   return (
@@ -113,7 +113,9 @@ export default function Registration() {
                 fullWidth
                 className="btn-box"
                 sx={{ mt: 3, mb: 2, backgroundColor: "black", color: "white" }}
-                onClick={() => handleRegister(email, password)}
+                onClick={() => {
+                  handleRegister(email, password);
+                }}
               >
                 Register
               </Button>
@@ -129,11 +131,11 @@ export default function Registration() {
                 </Grid>
                 <Grid item>
                   <Link
-                    href="#"
+                    href="/login"
                     variant="body2"
                     sx={{ color: "#ffffe6", textDecoration: "none" }}
                   >
-                    {"Don't have an account? Sign Up"}
+                    {"I already have an account, login"}
                   </Link>
                 </Grid>
               </Grid>

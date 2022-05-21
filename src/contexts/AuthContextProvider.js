@@ -20,32 +20,34 @@ const AuthContextProvider = ({ children }) => {
       headers: { 'Content-Type': 'multipart/form-data' },
     };
     let formData = new FormData();
-    formData.append('username', user.email);
+    formData.append('email', user.email);
     formData.append('password', user.password);
 
     try {
       const res = await axios.post(`${API}api/v1/account/register/`, formData, config);
-      navigate('/login');
+      navigate('/token');
     } catch (e) {
       console.log(e);
       setError('error occured');
     }
   };
 
-  async function login(username, password) {
-    console.log(username, password);
+
+  async function login(email, password) {
+    // console.log(email, password);
     const config = {
+      
       headers: { 'Content-Type': 'multipart/form-data' },
     };
     let formData = new FormData();
-    formData.append('username', username);
+    formData.append('email', email);
     formData.append('password', password);
 
     try {
       let res = await axios.post(`${API}api/v1/account/login/`, formData, config);
       localStorage.setItem('token', JSON.stringify(res.data));
-      localStorage.setItem('username', username);
-      setUser(username);
+      localStorage.setItem('email', email);
+      setUser(email);
       navigate('/');
     } catch (error) {
       setError('error occured');

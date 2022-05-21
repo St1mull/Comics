@@ -5,16 +5,17 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { authContext, useAuth } from "../contexts/AuthContextProvider";
 
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "@mui/material";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 function Copyright(props) {
   return (
@@ -36,6 +37,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+const navigate = useNavigate;
 export default function Login() {
   //   const handleSubmit = (event) => {
   //     event.preventDefault();
@@ -128,7 +130,7 @@ export default function Login() {
                 </Grid>
                 <Grid item>
                   <Link
-                    href="#"
+                    href="/register"
                     variant="body2"
                     sx={{ color: "#ffffe6", textDecoration: "none" }}
                   >

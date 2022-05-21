@@ -1,6 +1,6 @@
 import { Box, Pagination, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import { useProducts } from "../contexts/CrudContextProvider";
+import { useProducts } from "../../contexts/CrudContextProvider";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
@@ -20,13 +20,7 @@ const ProductList = () => {
           justifyContent: "space-evenly",
         }}
       >
-        {products ? (
-          products.map((item) => {
-            return <ProductCard item={item} key={item.id} />;
-          })
-        ) : (
-          <h2>Loading...</h2>
-        )}
+        <ProductCard />
       </Box>
       {/* <Box sx= {{textAlign: 'center'}}>
 
