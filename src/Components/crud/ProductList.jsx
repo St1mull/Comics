@@ -1,6 +1,6 @@
 import { Box, Pagination, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import { useProducts } from "../contexts/CrudContextProvider";
+import { useProducts } from "../../contexts/CrudContextProvider";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {

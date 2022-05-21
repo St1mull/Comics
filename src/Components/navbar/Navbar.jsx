@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -25,6 +26,8 @@ const pages = [
 const navigate = useNavigate;
 
 const Navbar = () => {
+  const { user, checkAuth, logout } = useAuth();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -137,47 +140,32 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem>
+            {user ? (
+              <Button
+                color="inherit"
+                sx={{ color: "white" }}
+                onClick={() => {
+                  logout();
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <>
                 <NavLink to="/login">
-                  <Typography sx={{ color: "black" }}>Login</Typography>
+                  <Button color="inherit" sx={{ color: "white" }}>
+                    Login
+                  </Button>
                 </NavLink>
-              </MenuItem>
 
-              {/* <MenuItem>
-                <Typography
-
-                //  onClick={}
-                >
-                  Logout
-                </Typography>
-              </MenuItem> */}
-              <MenuItem>
                 <NavLink to="/register">
-                  <Typography sx={{ color: "black" }}>Register</Typography>
+                  <Button color="inherit" sx={{ color: "white" }}>
+                    Register
+                  </Button>
                 </NavLink>
-              </MenuItem>
-            </Menu>
+              </>
+            )}
           </Box>
         </Toolbar>
       </Container>

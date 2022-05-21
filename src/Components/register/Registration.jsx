@@ -12,7 +12,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { authContext, useAuth } from "../contexts/AuthContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
+import { Modal } from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -32,6 +34,18 @@ function Copyright(props) {
   );
 }
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 const theme = createTheme();
 
 export default function Registration() {
@@ -44,9 +58,17 @@ export default function Registration() {
   //     });
   //   };
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const [ code, setCode ] = React.useState('');
+
+  const navigate = useNavigate();
+
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const { register, error } = useAuth();
+  const { register, error, handleCode } = useAuth();
 
   function handleRegister(email, password) {
     register({ email, password });
@@ -113,7 +135,11 @@ export default function Registration() {
                 fullWidth
                 className="btn-box"
                 sx={{ mt: 3, mb: 2, backgroundColor: "black", color: "white" }}
-                onClick={() => handleRegister(email, password)}
+                onClick={() => {
+                  handleRegister(email, password)
+                  handleOpen();
+                }
+                }
               >
                 Register
               </Button>
@@ -140,6 +166,42 @@ export default function Registration() {
             </Box>
           </Box>
           <Copyright sx={{ mt: 8, mb: 4 }} />
+          <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <TextField
+                className="user-box"
+                margin="normal"
+                required
+                fullWidth
+                id="code"
+                label="Code"
+                name="code"
+                autoComplete="code"
+                autoFocus
+                onChange={(e) => setCode(e.target.value)}
+                value={code}
+      />
+      <Link href="/login">
+      <Button
+                //   type="submit"
+                fullWidth
+                className="btn-box"
+                sx={{ mt: 3, mb: 2, backgroundColor: "black", color: "white" }}
+                onClick={() => {
+                  handleCode(code);
+                  handleClose();
+                }}
+              >
+              Send code
+      </Button>
+      </Link>
+        </Box>
+      </Modal>
         </Container>
       </ThemeProvider>
     </div>
