@@ -18,10 +18,10 @@ const AddProduct = () => {
 
   const [product, setProduct] = useState({
     title: "",
-    price: "",
+    price: 0,
     image: "",
     category: "",
-    // author: "",
+    description: "",
   });
 
   const handleInp = (e) => {
@@ -32,17 +32,12 @@ const AddProduct = () => {
     setProduct(obj);
   };
 
-  // const [age, setAge] = React.useState("");
-
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
-
   return (
     <div className="addProduct">
       <Box sx={{ width: "60vw", margin: "0 auto" }}>
         <TextField
           sx={{
+            marginTop: "10px",
             marginBottom: "10px",
             borderColor: "black",
             backgroundColor: "whitesmoke",
@@ -76,59 +71,32 @@ const AddProduct = () => {
             backgroundColor: "whitesmoke",
           }}
           fullWidth
-          id="outlined-basic"
-          label="image"
-          variant="outlined"
+          id="outlined-helperText"
           name="image"
           size="small"
           onChange={handleInp}
+          type="file"
         />
-        {/* <TextField
+        <FormControl fullWidth
           sx={{
             marginBottom: "10px",
             borderColor: "black",
             backgroundColor: "whitesmoke",
           }}
-          fullWidth
-          id="outlined-helperText"
-          helperText="Вставьте картинку"
-          name="image"
-          size="small"
-          onChange={handleInp}
-          type="file"
-        /> */}
-        {/* <FormControl fullWidth>
+        >
           <InputLabel id="demo-simple-select-label">Category</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             // value={category}
-            label="category"
+            label="Category"
             name="category"
             onChange={handleInp}
           >
-            <MenuItem value={1}>sssss</MenuItem>
             <MenuItem value={"Манга"}>Манга</MenuItem>
             <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
           </Select>
-        </FormControl> */}
-
-        {/* <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Author</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            // value={age}
-            // label="Age"
-            name="author"
-            onChange={handleInp}
-          >
-            <MenuItem value={10}>sssss</MenuItem>
-            <MenuItem value={20}>nnnnn</MenuItem>
-            <MenuItem value={30}>qqqqq</MenuItem>
-          </Select>
-        </FormControl>{" "} */}
-
+        </FormControl>
         <TextField
           sx={{
             marginBottom: "10px",
@@ -137,26 +105,12 @@ const AddProduct = () => {
           }}
           fullWidth
           id="outlined-basic"
-          label="Category"
+          label="Description"
           variant="outlined"
-          name="category"
+          name="description"
           size="small"
           onChange={handleInp}
         />
-        {/* <TextField
-          sx={{
-            marginBottom: "10px",
-            borderColor: "black",
-            backgroundColor: "whitesmoke",
-          }}
-          fullWidth
-          id="outlined-basic"
-          label="Author"
-          variant="outlined"
-          name="Author"
-          size="small"
-          onChange={handleInp}
-        /> */}
         <Button
           sx={{
             marginBottom: "10px",
@@ -167,7 +121,10 @@ const AddProduct = () => {
           variant="outlined"
           fullWidth
           size="large"
-          onClick={() => addProduct(product)}
+          onClick={() => {
+            addProduct(product);
+            navigate('/products');
+          }}
         >
           Add product
         </Button>

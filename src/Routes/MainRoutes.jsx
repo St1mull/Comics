@@ -12,6 +12,7 @@ import Verify from "../Components/register/Verify";
 import Madalka from "../Components/register/Madalka";
 import PaymentPage from "../Page/PaymentPage";
 import ContactUsPage from "../Page/ContactUsPage";
+import Moshennik from "../Components/moshennik/Moshennik";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -60,16 +61,11 @@ const MainRoutes = () => {
       element: <AboutUs />,
       id: 10,
     },
-    // {
-    //   link: "/verify",
-    //   element: <Verify />,
-    //   id: 11,
-    // },
-    // {
-    //   link: "/modal",
-    //   element: <Madalka />,
-    //   id: 12,
-    // },
+    {
+      link: "/moshennik",
+      element: <Moshennik/>,
+      id: 11,
+    },
   ];
   return (
     <Routes>

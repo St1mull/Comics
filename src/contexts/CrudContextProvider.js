@@ -36,12 +36,12 @@ const CrudContextProvider = ({ children }) => {
 
   const getProducts = async () => {
 
-
     const { data } = await axios(`${APIID}`)
     dispatch({
       type: 'GET_PRODUCTS',
-      payload: data
+      payload: data.results
     })
+
   }
   const getProductDetails = async (id) => {
     const { data } = await axios(`${APIID}${id}`);
@@ -60,16 +60,12 @@ const CrudContextProvider = ({ children }) => {
       headers: {'Content-Type':'multipart/form-data',Authorization},
   };
   
-  let formData = new FormData()
-  formData.append('title', newProduct.title)
-  formData.append('price', newProduct.price)
-  formData.append('image', newProduct.image)
-  formData.append('category', newProduct.category)
-  // formData.append('author', newProduct.author)
-
-
-
-
+    let formData = new FormData()
+    formData.append('title', newProduct.title)
+    formData.append('price', newProduct.price)
+    formData.append('image', newProduct.image)
+    formData.append('category', newProduct.category)
+    formData.append('description', newProduct.description)
     
     await axios.post(`${APIID}`, formData,config)
     getProducts()

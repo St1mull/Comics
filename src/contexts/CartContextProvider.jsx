@@ -148,17 +148,18 @@ const CartContextProvider = ({ children }) => {
     });
   }
 
+  const value = {
+    getCart,
+    addProductToCart,
+    changeProductCount,
+    checkProductInCart,
+    deleteCartProduct,
+    cart: state.cart,
+
+  }
+
   return (
-    <cartContext.Provider
-      value={{
-        getCart,
-        addProductToCart,
-        changeProductCount,
-        checkProductInCart,
-        deleteCartProduct,
-        cart: state.cart,
-      }}
-    >
+    <cartContext.Provider value={value} >
       {children}
     </cartContext.Provider>
   );
