@@ -1,0 +1,10 @@
+.homePageContainer{
+    background-image: url('https://www.odindesignthemes.com/theBebop/comic/images/header-bg.jpg');
+}
+
+.cardGrid{
+    margin: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
