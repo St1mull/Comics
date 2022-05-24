@@ -12,18 +12,19 @@ import { useCart } from "../../contexts/CartContextProvider";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
 import { useProducts } from "../../contexts/CrudContextProvider";
+import cartContext from "../../contexts/CartContextProvider"
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
   const { deleteProduct } = useProducts();
-  const { addProductToCart, checkProductInCart } = useCart();
+  const {addProductToCart, checkProductInCart} = useCart();
 
   const {
     handleLogout,
     user: { email },
   } = useAuth();
-  console.log(email);
+  // console.log(email);
 
   return (
     <Card sx={{ maxWidth: 345 }}>

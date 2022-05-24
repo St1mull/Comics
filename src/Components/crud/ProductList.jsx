@@ -9,6 +9,8 @@ const ProductList = () => {
   const { products, getProducts } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // console.log(products)
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -28,11 +30,11 @@ const ProductList = () => {
   };
   // pagination
 
-  function currentData() {
-    const begin = (page - 1) * itemsPerPage;
-    const end = begin + itemsPerPage;
-    return products.slice(begin, end);
-  }
+  // function currentData() {
+  //   const begin = (page - 1) * itemsPerPage;
+  //   const end = begin + itemsPerPage;
+  //   // return products.slice(begin, end);
+  // }
 
   return (
     <>
@@ -50,7 +52,7 @@ const ProductList = () => {
           }}
         >
           {products ? (
-            currentData().map((item) => (
+            products.map((item) => (
               <ProductCard item={item} key={item.id} />
             ))
           ) : (

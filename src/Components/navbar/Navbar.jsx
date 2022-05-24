@@ -15,14 +15,16 @@ import { useEffect, NavLink, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import { ADMIN } from "../../helpers/consts";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Store", link: "/products", id: 2 },
-  { name: "Contactus", link: "/contacts", id: 5 },
   { name: "About Us", link: "/about", id: 3 },
-  { name: "Admin panel", link: "/admin", id: 4 },
+  { name: "Contactus", link: "/contacts", id: 4 },
 ];
+
+const admin = {name: "Admin", link: "/admin", id: 5}
 
 const navigate = useNavigate;
 
@@ -143,6 +145,21 @@ const Navbar = () => {
                 </Button>
               </NavLink>
             ))}
+            {user === ADMIN ?                 
+                <NavLink to={admin.link} key={admin.key}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      ml: "auto",
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontWeight: "500",
+                    }}
+                  >
+                    ADMIN PANEL
+                  </Button>
+                </NavLink> : ""}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -152,7 +169,6 @@ const Navbar = () => {
                 sx={{ color: "white" }}
                 onClick={() => {
                   logout();
-                  navigate("/login");
                 }}
               >
                 Logout

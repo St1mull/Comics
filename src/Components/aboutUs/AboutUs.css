@@ -80,3 +80,7 @@
   .social-links a:hover{
     color: #0c52a1;
   }
+
+.fab {
+  font-family: "Font Awesome 6 Brands" !important;
+}

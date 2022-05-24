@@ -60,16 +60,6 @@ const MainRoutes = () => {
       element: <AboutUs />,
       id: 10,
     },
-    // {
-    //   link: "/verify",
-    //   element: <Verify />,
-    //   id: 11,
-    // },
-    // {
-    //   link: "/modal",
-    //   element: <Madalka />,
-    //   id: 12,
-    // },
   ];
   return (
     <Routes>
