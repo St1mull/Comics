@@ -10,6 +10,8 @@ import RegisterPage from "../Page/RegisterPage";
 import AuthPage from "../Page/AuthPage";
 import Verify from "../Components/register/Verify";
 import Madalka from "../Components/register/Madalka";
+import PaymentPage from "../Page/PaymentPage";
+import ContactUsPage from "../Page/ContactUsPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -34,8 +36,18 @@ const MainRoutes = () => {
       id: 4,
     },
     {
+      link: "/payment",
+      element: <PaymentPage />,
+      id: 5,
+    },
+    {
       link: "/admin",
       element: <AdminPage />,
+      id: 6,
+    },
+    {
+      link: "/contacts",
+      element: <ContactUsPage />,
       id: 6,
     },
     {

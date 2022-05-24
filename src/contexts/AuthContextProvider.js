@@ -24,7 +24,7 @@ const AuthContextProvider = ({ children }) => {
 
     try {
       const res = await axios.post(`${API}api/v1/account/register/`, formData, config);
-      navigate('/token');
+      // navigate('/login');
     } catch (e) {
       console.log(e);
       setError('error occured');
@@ -66,7 +66,7 @@ const AuthContextProvider = ({ children }) => {
           headers: { Authorization },
         }
       );
-
+        // console.log(res)
       localStorage.setItem(
         'token',
         JSON.stringify({
@@ -75,7 +75,7 @@ const AuthContextProvider = ({ children }) => {
         })
       );
 
-      let userName = localStorage.getItem('username');
+      let userName = localStorage.getItem('email');
       setUser(userName);
     } catch (error) {
       logout();

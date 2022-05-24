@@ -18,10 +18,10 @@ const AddProduct = () => {
 
   const [product, setProduct] = useState({
     title: "",
-    category: "",
     price: "",
     image: "",
-    author: "",
+    category: "",
+    // author: "",
   });
 
   const handleInp = (e) => {
@@ -41,37 +41,6 @@ const AddProduct = () => {
   return (
     <div className="addProduct">
       <Box sx={{ width: "60vw", margin: "0 auto" }}>
-        <TextField
-          sx={{
-            marginBottom: "10px",
-            borderColor: "black",
-            backgroundColor: "whitesmoke",
-          }}
-          fullWidth
-          id="outlined-basic"
-          label="Category"
-          variant="outlined"
-          name="category"
-          size="small"
-          onChange={handleInp}
-        />
-
-        {/* <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Category</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          // value={age}
-          // label="Age"
-          name="category"
-          onChange={handleInp}
-        >
-          <MenuItem value={10}>sssss</MenuItem>
-          <MenuItem value={20}>nnnnn</MenuItem>
-          <MenuItem value={30}>qqqqq</MenuItem>
-        </Select>
-      </FormControl> */}
-
         <TextField
           sx={{
             marginBottom: "10px",
@@ -114,7 +83,67 @@ const AddProduct = () => {
           size="small"
           onChange={handleInp}
         />
+        {/* <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-helperText"
+          helperText="Вставьте картинку"
+          name="image"
+          size="small"
+          onChange={handleInp}
+          type="file"
+        /> */}
+        {/* <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Category</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            // value={category}
+            label="category"
+            name="category"
+            onChange={handleInp}
+          >
+            <MenuItem value={1}>sssss</MenuItem>
+            <MenuItem value={"Манга"}>Манга</MenuItem>
+            <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
+          </Select>
+        </FormControl> */}
+
+        {/* <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Author</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            // value={age}
+            // label="Age"
+            name="author"
+            onChange={handleInp}
+          >
+            <MenuItem value={10}>sssss</MenuItem>
+            <MenuItem value={20}>nnnnn</MenuItem>
+            <MenuItem value={30}>qqqqq</MenuItem>
+          </Select>
+        </FormControl>{" "} */}
+
         <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-basic"
+          label="Category"
+          variant="outlined"
+          name="category"
+          size="small"
+          onChange={handleInp}
+        />
+        {/* <TextField
           sx={{
             marginBottom: "10px",
             borderColor: "black",
@@ -127,21 +156,7 @@ const AddProduct = () => {
           name="Author"
           size="small"
           onChange={handleInp}
-        />
-        {/* <TextField
-      
-      sx={{marginBottom: '10px', borderColor: 'black',backgroundColor: 'whitesmoke' }}
-        fullWidth
-        id="outlined-helperText"
-
-        helperText="Вставьте картинку"
-        name='picture'
-        size="small"
-        onChange={handleInp}
-        type='file'
-      
-      /> */}
-
+        /> */}
         <Button
           sx={{
             marginBottom: "10px",

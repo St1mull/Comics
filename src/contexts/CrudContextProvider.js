@@ -3,7 +3,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom';
 // import { API} from '../helpers/Consts'
-const API = 'https://comicskatana.herokuapp.com/api/v1/comics/'
+const APIID = 'https://comicskatana.herokuapp.com/api/v1/comics/'
 
 export const productContext = createContext();
 
@@ -37,14 +37,14 @@ const CrudContextProvider = ({ children }) => {
   const getProducts = async () => {
 
 
-    const { data } = await axios(`${API}`)
+    const { data } = await axios(`${APIID}`)
     dispatch({
       type: 'GET_PRODUCTS',
       payload: data
     })
   }
   const getProductDetails = async (id) => {
-    const { data } = await axios(`${API}${id}`);
+    const { data } = await axios(`${APIID}${id}`);
     dispatch({
       type: 'GET_PRODUCT_DETAILS',
       payload: data,
@@ -52,28 +52,31 @@ const CrudContextProvider = ({ children }) => {
   };
 
   const addProduct = async (newProduct) => {
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+
     const config ={
-      headers: {'Content-Type':'multipart/form-data',
-    },
+      headers: {'Content-Type':'multipart/form-data',Authorization},
   };
   
-  let newProduct2 = new FormData()
-  newProduct2.append('title', newProduct.title)
-  newProduct2.append('category', newProduct.category)
-  newProduct2.append('price', newProduct.price)
-  newProduct2.append('image', newProduct.image)
-  newProduct2.append('author', newProduct.author)
+  let formData = new FormData()
+  formData.append('title', newProduct.title)
+  formData.append('price', newProduct.price)
+  formData.append('image', newProduct.image)
+  formData.append('category', newProduct.category)
+  // formData.append('author', newProduct.author)
 
 
 
 
     
-    await axios.post(`${API}`, newProduct2,config)
+    await axios.post(`${APIID}`, formData,config)
     getProducts()
   }
 
   const deleteProduct = async (id) => {
-    await axios.delete(`${API}${id}`);
+    await axios.delete(`${APIID}${id}`);
     getProducts();
   };
 
@@ -81,16 +84,16 @@ const CrudContextProvider = ({ children }) => {
     const config ={
       headers: {'Content-Type': 'multipart/form-data'},
     };
-    let newProduct2 = new FormData()
-    newProduct2.append('title', newProduct.title)
-    newProduct2.append('category', newProduct.category)
-    newProduct2.append('price', newProduct.price)
-    newProduct2.append('image', newProduct.image)
-    newProduct2.append('author', newProduct.author)
-    newProduct2.append('id', newProduct.id)
-    let id = newProduct2.get('id')
+    let formData = new FormData()
+    formData.append('title', newProduct.title)
+    formData.append('price', newProduct.price)
+    formData.append('image', newProduct.image)
+    formData.append('category', newProduct.category)
+    // formData.append('author', newProduct.author)
+    formData.append('id', newProduct.id)
+    let id = formData.get('id')
     console.log(id);
-    await axios.patch(`${API}${id}/`, newProduct2,config);
+    await axios.patch(`${APIID}${id}/`, formData,config);
     getProducts()
 
   }

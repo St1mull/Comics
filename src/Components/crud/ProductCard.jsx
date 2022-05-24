@@ -6,44 +6,80 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import { IconButton } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "../../contexts/CartContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { ADMIN } from "../../helpers/consts";
 import { useProducts } from "../../contexts/CrudContextProvider";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
   const { deleteProduct } = useProducts();
+  const { addProductToCart, checkProductInCart } = useCart();
+
+  const {
+    handleLogout,
+    user: { email },
+  } = useAuth();
+  console.log(email);
+
   return (
-    <Card sx={{ minHeight: 350, minWidth: 350, my: 5, maxWidth: 450 }}>
+    <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ width: "67%" }}
         component="img"
-        height="200"
-        // image={item.picture}
-        // alt={item.name}
+        height="140"
+        image={item.image}
+        alt={item.title}
       />
       <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.title}
+        </Typography>
+
         <Typography
-          sx={{ display: "flex", textAlign: "center" }}
           gutterBottom
           variant="h5"
           component="div"
+          sx={{ color: "green", fontWeight: "700" }}
         >
-          {/* {item.name} */}
+          {item.price}$
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {/* {item.description} */}
-        </Typography>
-        <Typography variant="body2" sx={{ color: "black", fontWeight: "bold" }}>
-          {/* {item.price} $ */}
+
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          onClick={() => navigate(`/products/${item.id}`)}
+          sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: "3",
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {item.category}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => deleteProduct(item.id)}>
-          Delete
-        </Button>
-        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-          Edit
-        </Button>
+        {email == ADMIN ? (
+          <>
+            <Button size="small" onClick={() => deleteProduct(item.id)}>
+              Delete
+            </Button>
+
+            <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+              Edit
+            </Button>
+          </>
+        ) : (
+          <IconButton onClick={() => addProductToCart(item)}>
+            <ShoppingCartIcon
+              color={checkProductInCart(item.id) ? "primary" : ""}
+            />
+          </IconButton>
+        )}
       </CardActions>
     </Card>
   );

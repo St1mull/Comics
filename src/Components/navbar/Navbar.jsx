@@ -19,6 +19,7 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Store", link: "/products", id: 2 },
+  { name: "Contactus", link: "/contacts", id: 5 },
   { name: "About Us", link: "/about", id: 3 },
   { name: "Admin panel", link: "/admin", id: 4 },
 ];
@@ -27,7 +28,6 @@ const navigate = useNavigate;
 
 const Navbar = () => {
   const { user, checkAuth, logout } = useAuth();
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -45,6 +45,12 @@ const Navbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
 
   return (
     <AppBar sx={{ background: "#7575a3" }} position="static">
