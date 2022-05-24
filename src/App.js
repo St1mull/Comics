@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/navbar/Navbar";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import CartContextProvider from "./contexts/CartContextProvider";
