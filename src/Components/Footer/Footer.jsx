@@ -31,7 +31,7 @@ const Footer = () => {
                 fontFamily: "monospace",
               }}
             >
-              Подписаться на рассылку
+             Subscribe to newsletter
             </Box>
 
             <Box my={{ xs: 1, sm: 2 }}>
@@ -39,7 +39,7 @@ const Footer = () => {
             </Box>
 
             <Box my={{ xs: 1, sm: 3 }}>
-              <Button variant="contained">Отправить</Button>
+              <Button variant="contained">Send</Button>
             </Box>
             <Box my={{ xs: 1, sm: 3 }}>
               <Link
@@ -48,8 +48,8 @@ const Footer = () => {
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
                 color="red"
               >
-                Нажимая на кнопку , я соглашаюсь на обработку и хранение моих
-                персональных данных
+               By clicking on the button, I agree to the processing and storage of my
+                personal data
               </Link>
             </Box>
             <InstagramIcon />
@@ -68,7 +68,7 @@ const Footer = () => {
                 fontFamily: "monospace",
               }}
             >
-              Категории
+              Category
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
@@ -77,7 +77,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                СТАТЬИ И ПОДБОРКИ
+                ARTICLES AND COLLECTIONS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -87,7 +87,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                АВТОРЫ
+               THE AUTHORS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -97,7 +97,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                НОВЫМ АВТОРАМ
+                NEW AUTHORS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -107,7 +107,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                СЕРИИ
+                SERIES
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -117,7 +117,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                АРХИВ
+                ARCHIVE
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -138,7 +138,7 @@ const Footer = () => {
                 fontFamily: "monospace",
               }}
             >
-              О НАС
+             About Us
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
@@ -151,7 +151,7 @@ const Footer = () => {
                   fontFamily: "monospace",
                 }}
               >
-                КОНТАКТЫ
+                Contacts
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -165,7 +165,7 @@ const Footer = () => {
                   fontFamily: "monospace",
                 }}
               >
-                ГДЕ КУПИТЬ КНИГИ
+               WHERE TO BUY BOOKS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -179,7 +179,7 @@ const Footer = () => {
                   fontFamily: "monospace",
                 }}
               >
-                СЕРТИФИКАЦИЯ
+               CERTIFICATION
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -190,7 +190,7 @@ const Footer = () => {
                 sx={{ backgroundColor: "red", color: "white" }}
               >
                 <DoDisturbAltIcon />
-                Осторожно Мошенники!
+                Beware Fraudsters!
               </Button>
             </Box>
           </Grid>
@@ -203,7 +203,7 @@ const Footer = () => {
                 fontFamily: "monospace",
               }}
             >
-              Соц.Сети
+             Social network
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
@@ -212,7 +212,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                <YouTubeIcon /> Комиксы
+                <YouTubeIcon /> Comics
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -222,7 +222,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
               >
-                <TelegramIcon /> Комиксы для детей
+                <TelegramIcon /> comics for kids
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -232,7 +232,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.8rem", fontFamily: "monospace" }}
               >
-                <TelegramIcon /> АЗБУКА. КОМИКСЫ. МАНГА. ФАНТАСТИКА
+                <TelegramIcon /> ABC. COMICS. MANGA. FANTASY
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
@@ -242,7 +242,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ fontSize: "0.8rem", fontFamily: "monospace" }}
               >
-                <YouTubeIcon /> YOUTUBE: КОМИКСЫ. МАНГА
+                <YouTubeIcon />You.tube.Comics
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
