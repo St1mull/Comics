@@ -28,7 +28,7 @@ const ProductCard = ({ item }) => {
 
   return (
     <div>
-      <Card sx={{ minHeight: 350, minWidth: 220, m: 2 }}>
+      <Card sx={{ height: 800, width: '100%', m: 2 }}>
         <CardMedia
           sx={{ width: "300" }}
           component="img"
@@ -45,9 +45,19 @@ const ProductCard = ({ item }) => {
           >
             {item.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          {/* <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: '3',
+            WebkitBoxOrient: 'vertical',
+          }}
+          >
             {item.descriptions}
-          </Typography>
+          </Typography> */}
           <Typography variant="body2" color="text.secondary">
             {item.category}
           </Typography>
