@@ -16,13 +16,13 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         About Us
       </Typography>
-      ;
       <Box
         sx={{
           // bgcolor: "background.paper",
@@ -48,8 +48,8 @@ const AboutUs = () => {
               >
                 <Typography
                   component="h1"
+                  align="left"
                   variant="h4 "
-                  align="start"
                   color="text.danger"
                   gutterBottom
                   mr={5}
@@ -57,70 +57,80 @@ const AboutUs = () => {
                 >
                   Lorem ipsum dolor sit amet consectetur adipisicing Lorem,
                   ipsum..
-                  <Typography
-                    variant="h5"
-                    color="text.secondary"
-                    paragraph
-                    sx={{
-                      margin: "auto",
-                      marginTop: "10px",
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi veniam, voluptatem sequi quam sapiente officia
-                    voluptate assumenda doloribus placeat, cumque ea id deserunt
-                    cum minima eius reprehenderit deleniti beatae possimus!
-                    Nostrum, praesentium earum? Distinctio, consequatur.
-                    <Typography
-                      component="h3"
-                      variant="h4 "
-                      mt={15}
-                      align="end"
-                      color="text.danger"
-                      gutterBottom
-                      sx={{ color: "black" }}
-                    >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Incidunt, delectus!
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      color="text.secondary"
-                      align="end"
-                      paragraph
-                      sx={{
-                        margin: "auto",
-                        marginTop: "10px",
-                        verticalAlign: "middle",
-                      }}
-                    >
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nisi veniam, voluptatem sequi quam sapiente officia
-                      voluptate assumenda doloribus placeat, cumque ea id
-                      deserunt cum minima eius reprehenderit deleniti beatae
-                      possimus! Nostrum, praesentium earum? Distinctio,
-                      consequatur.
-                    </Typography>
-                    <Typography
-                      component="h3"
-                      variant="h4 "
-                      align="start"
-                      color="text.danger"
-                      gutterBottom
-                      mr={5}
-                      mt={15}
-                      sx={{ color: "black" }}
-                    >
-                      Lorem ipsum dolor sit amet consectetur adipisicing Lorem,
-                      ipsum..
-                    </Typography>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi veniam, voluptatem sequi quam sapiente officia
-                    voluptate assumenda doloribus placeat, cumque ea id deserunt
-                    cum minima eius reprehenderit deleniti beatae possimus!
-                    Nostrum, praesentium earum? Distinctio, consequatur.
-                  </Typography>
+                </Typography>
+                <Typography
+                  variant="h5"
+                  color="text.secondary"
+                  paragraph
+                  sx={{
+                    margin: "auto",
+                    marginTop: "10px",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  veniam, voluptatem sequi quam sapiente officia voluptate
+                  assumenda doloribus placeat, cumque ea id deserunt cum minima
+                  eius reprehenderit deleniti beatae possimus! Nostrum,
+                  praesentium earum? Distinctio, consequatur.
+                </Typography>
+                <Typography
+                  component="h1"
+                  variant="h4 "
+                  mt={15}
+                  align="right"
+                  color="text.danger"
+                  gutterBottom
+                  sx={{ color: "black" }}
+                >
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Incidunt, delectus!
+                </Typography>
+                <Typography
+                  variant="h5"
+                  color="text.secondary"
+                  align="right"
+                  paragraph
+                  sx={{
+                    margin: "auto",
+                    marginTop: "10px",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  veniam, voluptatem sequi quam sapiente officia voluptate
+                  assumenda doloribus placeat, cumque ea id deserunt cum minima
+                  eius reprehenderit deleniti beatae possimus! Nostrum,
+                  praesentium earum? Distinctio, consequatur.
+                </Typography>
+                <Typography
+                  component="h1"
+                  variant="h4 "
+                  align="left"
+                  color="text.danger"
+                  gutterBottom
+                  mr={5}
+                  mt={15}
+                  sx={{ color: "black" }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing Lorem,
+                  ipsum..
+                </Typography>
+                <Typography
+                  variant="h5"
+                  color="text.secondary"
+                  paragraph
+                  sx={{
+                    margin: "auto",
+                    marginTop: "10px",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  veniam, voluptatem sequi quam sapiente officia voluptate
+                  assumenda doloribus placeat, cumque ea id deserunt cum minima
+                  eius reprehenderit deleniti beatae possimus! Nostrum,
+                  praesentium earum? Distinctio, consequatur.
                 </Typography>
               </Grid>
 
@@ -138,8 +148,9 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         Our Partners
@@ -167,37 +178,54 @@ const AboutUs = () => {
                 md={6}
                 sx={{ margin: "auto", marginBottom: "130px", fontSize: "bold" }}
               >
-                <div style={{ display: "flex" }}>
+                <Box style={{ display: "flex", widthMax: "50px" }}>
                   <CardMedia
                     component="img"
-                    sx={{ width: "15%", marginRight: "100px" }}
+                    sx={{
+                      width: "15%",
+                      // marginRight: "15px",
+                      cursor: "pointer",
+                    }}
                     image="https://img.icons8.com/doodle/2x/twitter--v1.png"
                     alt="JAWS"
                   />
+
                   <CardMedia
                     component="img"
-                    sx={{ width: "15%", marginRight: "100px" }}
+                    sx={{
+                      width: "15%",
+
+                      cursor: "pointer",
+                    }}
                     image="https://img.icons8.com/doodle/2x/--tinder.png"
                     alt="JAWS"
                   />
                   <CardMedia
                     component="img"
-                    sx={{ width: "15%", marginRight: "100px" }}
+                    sx={{
+                      width: "15%",
+
+                      cursor: "pointer",
+                    }}
                     image="https://img.icons8.com/doodle/2x/instagram--v1.png"
                     alt="JAWS"
                   />
                   <CardMedia
                     component="img"
-                    sx={{ width: "15%", marginRight: "100px" }}
+                    sx={{
+                      width: "15%",
+
+                      cursor: "pointer",
+                    }}
                     image="https://img.icons8.com/doodle/2x/facebook-new.png"
                     alt="JAWS"
                   />
-                </div>
+                </Box>
 
                 <Typography
                   component="h1"
                   variant="h4 "
-                  align="start"
+                  align="left"
                   color="text.danger"
                   mt={15}
                   gutterBottom
@@ -227,7 +255,7 @@ const AboutUs = () => {
 
               <CardMedia
                 component="img"
-                sx={{ width: "36%" }}
+                sx={{ width: "36%", cursor: "pointer" }}
                 image="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png"
                 alt="JAWS"
               />
@@ -239,89 +267,90 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         Our Team
       </Typography>
-      <div class="main">
-        <div class="profile-card">
-          <div class="img">
+      <div className="main">
+        <div className="profile-card">
+          <div className="img">
             <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png" />
           </div>
-          <div class="caption">
+          <div className="caption">
             <h3>Vuglizov Said</h3>
             <p>Senior App Developer</p>
-          </div>
-          <div class="social-links">
-            <a href="#">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
+            <div className="social-links">
+              <a href="#">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="profile-card">
-          <div class="img">
-            <img src="team-2.jpg" />
+        <div className="profile-card">
+          <div className="img">
+            <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png" />
           </div>
-          <div class="caption">
+          <div className="caption">
             <h3>Esenzhanov Emil</h3>
             <p>Front End Developer</p>
-            <div class="social-links">
+            <div className="social-links">
               <a href="#">
-                <i class="fab fa-facebook"></i>
+                <i className="fab fa-facebook"></i>
               </a>
               <a href="#">
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-instagram"></i>
               </a>
               <a href="#">
-                <i class="fab fa-twitter"></i>
+                <i className="fab fa-twitter"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="profile-card">
-          <div class="img">
+        <div className="profile-card">
+          <div className="img">
             <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png" />
           </div>
-          <div class="caption">
+          <div className="caption">
             <h3>Berik Arapov</h3>
             <p>Full Stact Developer</p>
-            <div class="social-links">
+            <div className="social-links">
               <a href="#">
-                <i class="fab fa-facebook"></i>
+                <i className="fab fa-facebook"></i>
               </a>
               <a href="#">
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-instagram"></i>
               </a>
               <a href="#">
-                <i class="fab fa-twitter"></i>
+                <i className="fab fa-twitter"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="profile-card">
-          <div class="img">
+        <div className="profile-card">
+          <div className="img">
             <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png" />
           </div>
-          <div class="caption">
+          <div className="caption">
             <h3>---Sultan---</h3>
             <p>Full Stact Developer</p>
-            <div class="social-links">
+            <div className="social-links">
               <a href="#">
-                <i class="fab fa-facebook"></i>
+                <i className="fab fa-facebook"></i>
               </a>
               <a href="#">
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-instagram"></i>
               </a>
               <a href="#">
-                <i class="fab fa-twitter"></i>
+                <i className="fab fa-twitter"></i>
               </a>
             </div>
           </div>

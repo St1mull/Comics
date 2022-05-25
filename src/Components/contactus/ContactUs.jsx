@@ -16,6 +16,7 @@ const ContactUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
+        align="center"
         p={2}
         pl={5}
         pt={3}
@@ -27,11 +28,18 @@ const ContactUs = () => {
         autoComplete="off"
         sx={{ width: "50vw", margin: "10vh auto" }}
       >
-        <Typography marginBottom={3} variant="body2">
+        <Typography
+          variant="h5"
+          color="text.secondary"
+          paragraph
+          sx={{
+            margin: "auto",
+            marginTop: "10px",
+            verticalAlign: "middle",
+          }}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam alias
-          blanditiis esse vero tenetur. Quasi nobis aperiam quidem sapiente
-          accusamus tenetur repudiandae consectetur modi quia sint! Facilis,
-          tempora.
+          blanditiis esse vero tenetur
         </Typography>
 
         <TextField

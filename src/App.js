@@ -11,7 +11,6 @@ function App() {
       <AuthContextProvider>
       <CrudContextProvider>
       <CartContextProvider>
-
         <Navbar/>
         <MainRoutes/>
         <Footer/>

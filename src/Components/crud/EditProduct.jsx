@@ -1,7 +1,15 @@
-import { Box, Button, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useProducts } from "../../context/CrudContextProvider";
+import { useProducts } from "../../contexts/CrudContextProvider";
 
 const EditCard = () => {
   const { getProductDetails, productDetails, saveEditedProduct } =
@@ -26,39 +34,43 @@ const EditCard = () => {
     };
     setProduct(obj);
   };
+  const handleInpFile = (e) => {
+    let file = e.target.files[0];
+    setProduct({
+      ...product,
+      image: file,
+    });
+  };
   return (
     <Box sx={{ width: "60vw", margin: "10vh auto" }}>
       <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
+        sx={{
+          marginBottom: "10px",
+          borderColor: "black",
+          backgroundColor: "whitesmoke",
+        }}
         fullWidth
         id="outlined-basic"
-        label="Category"
+        label="Title"
+        value={product.title || ""}
         variant="outlined"
-        name="category"
+        name="title"
         size="small"
-        value={product.category || ""}
         onChange={handleInp}
       />
       <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
-        fullWidth
-        id="outlined-basic"
-        label="Name"
-        variant="outlined"
-        name="name"
-        size="small"
-        value={product.name || ""}
-        onChange={handleInp}
-      />
-      <TextField
-        sx={{ marginBottom: "10px", borderColor: "black" }}
+        sx={{
+          marginBottom: "10px",
+          borderColor: "black",
+          backgroundColor: "whitesmoke",
+        }}
         fullWidth
         id="outlined-basic"
         label="Price"
+        value={product.price || ""}
         variant="outlined"
         name="price"
         size="small"
-        value={product.price || ""}
         onChange={handleInp}
       />
       <TextField
@@ -69,41 +81,50 @@ const EditCard = () => {
         }}
         fullWidth
         id="outlined-basic"
-        label="Description"
+        label="Image"
+        value={product.image || ""}
         variant="outlined"
-        name="description"
+        name="image"
         size="small"
-        value={product.description || ""}
-        onChange={handleInp}
+        onChange={handleInpFile}
       />
-      <TextField
-        sx={{
-          marginBottom: "10px",
-          borderColor: "black",
-          backgroundColor: "whitesmoke",
-        }}
-        fullWidth
-        id="outlined-basic"
-        label="Made in ..."
-        variant="outlined"
-        name="made_in"
-        size="small"
-        value={product.made_in || ""}
-        onChange={handleInp}
-      />
-      {/* <TextField
-    
-    sx={{marginBottom: '10px', borderColor: 'black',backgroundColor: 'whitesmoke' }}
-      fullWidth
-      id="outlined-helperText"
 
-      helperText="Вставьте картинку"
-      name='picture'
-      size="small"
-      onChange={handleInp}
-      type='file'
-      defaultValue="Default Value"
-    /> */}
+      <FormControl
+        fullWidth
+        sx={{
+          marginBottom: "10px",
+          borderColor: "black",
+          backgroundColor: "whitesmoke",
+        }}
+      >
+        <InputLabel id="demo-simple-select-label">Category</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={product.category || ""}
+          label="Category"
+          name="category"
+          onChange={handleInp}
+        >
+          <MenuItem value={"Manga"}>manga</MenuItem>
+          <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
+        </Select>
+      </FormControl>
+      <TextField
+        sx={{
+          marginBottom: "10px",
+          borderColor: "black",
+          backgroundColor: "whitesmoke",
+        }}
+        fullWidth
+        id="outlined-basic"
+        label="Descriptions"
+        variant="outlined"
+        name="descriptions"
+        value={product.descriptions || ""}
+        size="small"
+        onChange={handleInp}
+      />
 
       <Button
         sx={{
@@ -115,7 +136,10 @@ const EditCard = () => {
         variant="outlined"
         fullWidth
         size="large"
-        onClick={() => saveEditedProduct(product)}
+        onClick={() => {
+          saveEditedProduct(product);
+          navigate("/products");
+        }}
       >
         Edit product
       </Button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import Cards from "react-credit-cards";
-// import "react-credit-cards/es/styles-compiled.css";
+import Cards from "react-credit-cards";
+import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
 
 const PaymentForm = () => {
@@ -39,7 +39,7 @@ const PaymentForm = () => {
         <input type="text" placeholder="Address" />
         <input id="number-inp" type="number" placeholder="number" />
 
-        <div
+        <Cards
           cvc={data.cvc}
           focused={focus}
           name={data.name}

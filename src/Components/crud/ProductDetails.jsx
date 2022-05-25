@@ -33,7 +33,7 @@ const ProductDetails = () => {
             onClick={() => addProductToCart(productDetails)}
             className="cart-button"
           >
-            ADD TO CART
+            ADD TO CART WWWWWW
           </button>
 
           <div className="wine-details">
