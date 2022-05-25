@@ -11,11 +11,14 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { useEffect, NavLink, useNavigate } from "react-router-dom";
+import { useEffect, NavLink, useNavigate, Link } from "react-router-dom";
 
 import "./Navbar.css";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
+import { Favorite, Person, ShoppingBag } from "@mui/icons-material";
+
+import { Badge } from "@mui/material";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -24,7 +27,7 @@ const pages = [
   { name: "Contactus", link: "/contacts", id: 4 },
 ];
 
-const admin = {name: "Admin", link: "/admin", id: 5}
+const admin = { name: "Admin", link: "/admin", id: 5 };
 
 const navigate = useNavigate;
 
@@ -32,6 +35,7 @@ const Navbar = () => {
   const { user, checkAuth, logout } = useAuth();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [count, setCount] = React.useState(0);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -145,22 +149,41 @@ const Navbar = () => {
                 </Button>
               </NavLink>
             ))}
-            {user === ADMIN ?                 
-                <NavLink to={admin.link} key={admin.key}>
-                  <Button
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      ml: "auto",
-                      my: 2,
-                      color: "white",
-                      display: "block",
-                      fontWeight: "500",
-                    }}
-                  >
-                    ADMIN PANEL
-                  </Button>
-                </NavLink> : ""}
+            {user === ADMIN ? (
+              <NavLink to={admin.link} key={admin.key}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    ml: "auto",
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontWeight: "500",
+                  }}
+                >
+                  ADMIN PANEL
+                </Button>
+              </NavLink>
+            ) : (
+              ""
+            )}
           </Box>
+
+          <Tooltip title="Favorites" className="navbar-icon">
+            <IconButton sx={{ p: 0 }}>
+              <Favorite />
+            </IconButton>
+          </Tooltip>
+
+          <Link to="/cart">
+            <Tooltip title="Cart" className="navbar-icon">
+              <IconButton sx={{ p: 0 }}>
+                <Badge badgeContent={count} color="error">
+                  <ShoppingBag />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+          </Link>
 
           <Box sx={{ flexGrow: 0 }}>
             {user ? (

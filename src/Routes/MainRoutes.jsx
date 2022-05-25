@@ -13,6 +13,9 @@ import Madalka from "../Components/register/Madalka";
 import PaymentPage from "../Page/PaymentPage";
 import ContactUsPage from "../Page/ContactUsPage";
 import Moshennik from "../Components/moshennik/Moshennik";
+import Cart from "../Components/Cart/Cart";
+import ProductDetailsPage from "../Page/ProductDetailsPage";
+import EditProductPage from "../Page/EditProductPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -49,7 +52,12 @@ const MainRoutes = () => {
     {
       link: "/contacts",
       element: <ContactUsPage />,
-      id: 6,
+      id: 7,
+    },
+    {
+      link: "/cart",
+      element: <Cart />,
+      id: 8,
     },
     {
       link: "/register",
@@ -63,8 +71,18 @@ const MainRoutes = () => {
     },
     {
       link: "/moshennik",
-      element: <Moshennik/>,
+      element: <Moshennik />,
       id: 11,
+    },
+    {
+      link: "/products/:id",
+      element: <ProductDetailsPage />,
+      id: 12,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProductPage />,
+      id: 13,
     },
   ];
   return (

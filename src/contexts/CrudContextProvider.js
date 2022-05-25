@@ -72,14 +72,26 @@ const CrudContextProvider = ({ children }) => {
   }
 
   const deleteProduct = async (id) => {
-    await axios.delete(`${APIID}${id}`);
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+
+    const config ={
+      headers: {'Content-Type':'multipart/form-data',Authorization},
+  };
+    
+    await axios.delete(`${APIID}${id}`,config);
     getProducts();
   };
 
   const saveEditedProduct = async (newProduct) => {
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+
     const config ={
-      headers: {'Content-Type': 'multipart/form-data'},
-    };
+      headers: {'Content-Type':'multipart/form-data',Authorization},
+  };
     let formData = new FormData()
     formData.append('title', newProduct.title)
     formData.append('price', newProduct.price)

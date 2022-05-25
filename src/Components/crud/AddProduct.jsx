@@ -19,9 +19,8 @@ const AddProduct = () => {
   const [product, setProduct] = useState({
     title: "",
     price: 0,
-    image: "",
     category: "",
-    description: "",
+    descriptions: "",
   });
 
   const handleInp = (e) => {
@@ -30,6 +29,14 @@ const AddProduct = () => {
       [e.target.name]: e.target.value,
     };
     setProduct(obj);
+  };
+
+  const handleInpFile = (e) => {
+    let file = e.target.files[0];
+    setProduct({
+      ...product,
+      image: file,
+    });
   };
 
   return (
@@ -74,10 +81,24 @@ const AddProduct = () => {
           id="outlined-helperText"
           name="image"
           size="small"
-          onChange={handleInp}
+          onChange={handleInpFile}
           type="file"
         />
-        <FormControl fullWidth
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-helperText"
+          name="category"
+          size="small"
+          onChange={handleInp}
+          type="text"
+        />
+        {/* <FormControl
+          fullWidth
           sx={{
             marginBottom: "10px",
             borderColor: "black",
@@ -93,10 +114,10 @@ const AddProduct = () => {
             name="category"
             onChange={handleInp}
           >
-            <MenuItem value={"Манга"}>Манга</MenuItem>
+            <MenuItem value={"Manga"}>Manga</MenuItem>
             <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
           </Select>
-        </FormControl>
+        </FormControl> */}
         <TextField
           sx={{
             marginBottom: "10px",
@@ -105,9 +126,9 @@ const AddProduct = () => {
           }}
           fullWidth
           id="outlined-basic"
-          label="Description"
+          label="Descriptions"
           variant="outlined"
-          name="description"
+          name="descriptions"
           size="small"
           onChange={handleInp}
         />
@@ -123,7 +144,7 @@ const AddProduct = () => {
           size="large"
           onClick={() => {
             addProduct(product);
-            navigate('/products');
+            navigate("/products");
           }}
         >
           Add product

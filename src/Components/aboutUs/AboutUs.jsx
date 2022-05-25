@@ -16,9 +16,9 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
-        align="center"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         About Us
@@ -148,9 +148,9 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
-        align="center"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         Our Partners
@@ -178,12 +178,12 @@ const AboutUs = () => {
                 md={6}
                 sx={{ margin: "auto", marginBottom: "130px", fontSize: "bold" }}
               >
-                <div style={{ display: "flex" }}>
+                <Box style={{ display: "flex", widthMax: "50px" }}>
                   <CardMedia
                     component="img"
                     sx={{
                       width: "15%",
-                      marginRight: "100px",
+                      // marginRight: "15px",
                       cursor: "pointer",
                     }}
                     image="https://img.icons8.com/doodle/2x/twitter--v1.png"
@@ -194,7 +194,7 @@ const AboutUs = () => {
                     component="img"
                     sx={{
                       width: "15%",
-                      marginRight: "100px",
+
                       cursor: "pointer",
                     }}
                     image="https://img.icons8.com/doodle/2x/--tinder.png"
@@ -204,7 +204,7 @@ const AboutUs = () => {
                     component="img"
                     sx={{
                       width: "15%",
-                      marginRight: "100px",
+
                       cursor: "pointer",
                     }}
                     image="https://img.icons8.com/doodle/2x/instagram--v1.png"
@@ -214,13 +214,13 @@ const AboutUs = () => {
                     component="img"
                     sx={{
                       width: "15%",
-                      marginRight: "100px",
+
                       cursor: "pointer",
                     }}
                     image="https://img.icons8.com/doodle/2x/facebook-new.png"
                     alt="JAWS"
                   />
-                </div>
+                </Box>
 
                 <Typography
                   component="h1"
@@ -267,9 +267,9 @@ const AboutUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
-        align="center"
+        // align="center"
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         Our Team
@@ -282,22 +282,22 @@ const AboutUs = () => {
           <div className="caption">
             <h3>Vuglizov Said</h3>
             <p>Senior App Developer</p>
-          </div>
-          <div className="social-links">
-            <a href="#">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i className="fab fa-twitter"></i>
-            </a>
+            <div className="social-links">
+              <a href="#">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div className="profile-card">
           <div className="img">
-            <img src="team-2.jpg" />
+            <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png" />
           </div>
           <div className="caption">
             <h3>Esenzhanov Emil</h3>

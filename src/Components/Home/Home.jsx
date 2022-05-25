@@ -153,8 +153,8 @@ const Home = () => {
                 </Grid>
               </Grid>
             </Container>
-            <div className="cardGrid">
-              <Box sx={{ margin: "20px" }}>
+            <div style={{ display: "flex" }} className="cardGrid">
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -192,7 +192,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -230,7 +230,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -268,7 +268,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -307,7 +307,7 @@ const Home = () => {
                 </Typography>
               </Box>
 
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -345,7 +345,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -383,7 +383,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{
@@ -421,7 +421,7 @@ const Home = () => {
                   ipsum nulla laborum numquam, ratione ipsa.
                 </Typography>
               </Box>
-              <Box sx={{ margin: "20px" }}>
+              <Box sx={{ margin: "20px", width: "300px" }}>
                 <CardMedia
                   component="img"
                   sx={{

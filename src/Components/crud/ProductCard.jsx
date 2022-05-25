@@ -1,87 +1,80 @@
-import * as React from "react";
+import React from "react";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useNavigate } from "react-router-dom";
-import { IconButton } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useCart } from "../../contexts/CartContextProvider";
-import { useAuth } from "../../contexts/AuthContextProvider";
-import { ADMIN } from "../../helpers/consts";
 import { useProducts } from "../../contexts/CrudContextProvider";
-import cartContext from "../../contexts/CartContextProvider"
+import { useNavigate } from "react-router-dom";
 
-export default function ProductCard({ item }) {
+import ShoppingBag from "@mui/icons-material/ShoppingBag";
+import { IconButton } from "@mui/material";
+import { useCart } from "../../contexts/CartContextProvider";
+import { ADMIN } from "../../helpers/consts";
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { MoreHoriz } from "@mui/icons-material";
+
+const ProductCard = ({ item }) => {
   const navigate = useNavigate();
-
   const { deleteProduct } = useProducts();
-  const {addProductToCart, checkProductInCart} = useCart();
+  const { addProductToCart, checkProductInCart } = useCart();
 
   const {
     handleLogout,
     user: { email },
   } = useAuth();
-  // console.log(email);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={item.image}
-        alt={item.title}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.title}
-        </Typography>
-
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          sx={{ color: "green", fontWeight: "700" }}
-        >
-          {item.price}$
-        </Typography>
-
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          onClick={() => navigate(`/products/${item.id}`)}
-          sx={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            display: "-webkit-box",
-            WebkitLineClamp: "3",
-            WebkitBoxOrient: "vertical",
-          }}
-        >
-          {item.category}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        {email == ADMIN ? (
-          <>
-            <Button size="small" onClick={() => deleteProduct(item.id)}>
-              Delete
-            </Button>
-
-            <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-              Edit
-            </Button>
-          </>
-        ) : (
+    <div>
+      <Card sx={{ minHeight: 350, minWidth: 220, m: 2 }}>
+        <CardMedia
+          sx={{ width: "300" }}
+          component="img"
+          height="300"
+          image={item.image}
+          alt={item.title}
+        />
+        <CardContent>
+          <Typography
+            sx={{ display: "flex", textAlign: "center" }}
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
+            {item.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.descriptions}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.category}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "black", fontWeight: "bold" }}
+          >
+            {item.price} $
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small" onClick={() => deleteProduct(item.id)}>
+            Delete
+          </Button>
+          <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+            Edit
+          </Button>
           <IconButton onClick={() => addProductToCart(item)}>
-            <ShoppingCartIcon
-              color={checkProductInCart(item.id) ? "primary" : ""}
-            />
+            <ShoppingBag color={checkProductInCart(item.id) ? "warning" : ""} />
           </IconButton>
-        )}
-      </CardActions>
-    </Card>
+          <IconButton onClick={() => navigate(`/products/${item.id}`)}>
+            <MoreHoriz />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
   );
-}
+};
+
+export default ProductCard;
