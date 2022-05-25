@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AddShoppingCartOutlined } from '@mui/icons-material';
 // import { API} from '../helpers/Consts'
 const APIID = 'https://comicskatana.herokuapp.com/api/v1/comics/'
 
@@ -36,7 +37,14 @@ const CrudContextProvider = ({ children }) => {
 
   const getProducts = async () => {
 
-    const { data } = await axios(`${APIID}`)
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+    const config ={
+      headers: {'Content-Type':'multipart/form-data',Authorization},
+    };
+
+    const { data } = await axios(`${APIID}`, config)
     dispatch({
       type: 'GET_PRODUCTS',
       payload: data.results
@@ -44,7 +52,15 @@ const CrudContextProvider = ({ children }) => {
 
   }
   const getProductDetails = async (id) => {
-    const { data } = await axios(`${APIID}${id}`);
+
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+    const config ={
+      headers: {'Content-Type':'multipart/form-data',Authorization},
+    };
+
+    const { data } = await axios(`${APIID}${id}/`, config);
     dispatch({
       type: 'GET_PRODUCT_DETAILS',
       payload: data,
@@ -52,9 +68,9 @@ const CrudContextProvider = ({ children }) => {
   };
 
   const addProduct = async (newProduct) => {
+
     let token = JSON.parse(localStorage.getItem('token'));
     const Authorization = `Bearer ${token.access}`;
-
 
     const config ={
       headers: {'Content-Type':'multipart/form-data',Authorization},
@@ -72,15 +88,15 @@ const CrudContextProvider = ({ children }) => {
   }
 
   const deleteProduct = async (id) => {
+
     let token = JSON.parse(localStorage.getItem('token'));
     const Authorization = `Bearer ${token.access}`;
 
-
     const config ={
       headers: {'Content-Type':'multipart/form-data',Authorization},
-  };
-    
-    await axios.delete(`${APIID}${id}`,config);
+    };
+
+    await axios.delete(`${APIID}${id}`, config);
     getProducts();
   };
 
@@ -97,7 +113,6 @@ const CrudContextProvider = ({ children }) => {
     formData.append('price', newProduct.price)
     formData.append('image', newProduct.image)
     formData.append('category', newProduct.category)
-    // formData.append('author', newProduct.author)
     formData.append('id', newProduct.id)
     let id = formData.get('id')
     console.log(id);

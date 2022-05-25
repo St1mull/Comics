@@ -53,26 +53,34 @@ const MainRoutes = () => {
       link: "/contacts",
       element: <ContactUsPage />,
       id: 7,
+<<<<<<< HEAD
     },
     {
       link: "/cart",
       element: <Cart />,
       id: 8,
+=======
+>>>>>>> 4067f83256357196dde0449cd0f924cea9a60427
     },
     {
       link: "/register",
       element: <RegisterPage />,
-      id: 9,
+      id: 8,
     },
     {
       link: "/about",
       element: <AboutUs />,
-      id: 10,
+      id: 9,
     },
     {
       link: "/moshennik",
+<<<<<<< HEAD
       element: <Moshennik />,
       id: 11,
+=======
+      element: <Moshennik/>,
+      id: 10,
+>>>>>>> 4067f83256357196dde0449cd0f924cea9a60427
     },
     {
       link: "/products/:id",

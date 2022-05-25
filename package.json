@@ -11,8 +11,12 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+<<<<<<< HEAD
     "dayjs": "^1.11.2",
     "material-tabs": "^0.0.8",
+=======
+    "cors": "^2.8.5",
+>>>>>>> 4067f83256357196dde0449cd0f924cea9a60427
     "react": "^18.1.0",
     "react-credit-cards": "^0.8.3",
     "react-dom": "^18.1.0",

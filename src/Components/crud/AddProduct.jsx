@@ -12,8 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/CrudContextProvider";
 
 const AddProduct = () => {
-  const { addProduct } = useProducts();
-
+  const { addProduct, getProductDetails } = useProducts(); 
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -84,7 +83,7 @@ const AddProduct = () => {
           onChange={handleInpFile}
           type="file"
         />
-        <TextField
+        {/* <TextField
           sx={{
             marginBottom: "10px",
             borderColor: "black",
@@ -96,8 +95,8 @@ const AddProduct = () => {
           size="small"
           onChange={handleInp}
           type="text"
-        />
-        {/* <FormControl
+        /> */}
+         <FormControl
           fullWidth
           sx={{
             marginBottom: "10px",
@@ -114,10 +113,10 @@ const AddProduct = () => {
             name="category"
             onChange={handleInp}
           >
-            <MenuItem value={"Manga"}>Manga</MenuItem>
-            <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
+            <MenuItem value={"manga"}>manga</MenuItem>
+            {/* <MenuItem value={"manga"}>МангаМанхва</MenuItem> */}
           </Select>
-        </FormControl> */}
+        </FormControl> 
         <TextField
           sx={{
             marginBottom: "10px",
