@@ -41,31 +41,31 @@ export default function AboutUs() {
                     gutterBottom
                     mr={3}
                   >
-                    Внимание, мошенники!
+                    Attention scammers!
                     <Typography
                       variant="h5"
                       color="text.secondary"
                       paragraph
                       sx={{ margin: "auto", verticalAlign: "middle" }}
                     >
-                      Уважаемые читатели! «Издательской Группе «Азбука-Аттикус»
-                      стало известно, что участились случаи использования наших
-                      торговых знаков «Махаон», «Азбука» в мошеннических целях,
-                      в том числе в предложениях вакансий на работу в
-                      издательстве при условии предварительного перевода
-                      средств. Мы размещаем информацию о вакансиях только на
-                      ресурсах, которые внимательно относятся к законности
-                      объявлений (hh.ru, Superjob и подобные) и НИКОГДА не
-                      просим соискателей перевести нам какие-либо деньги — это
-                      незаконно. Сотрудники издательства не связываются с
-                      соискателями через мессенджеры ВК, Facebook, Whatsapp,
-                      Telegram и никогда не пишут в личные сообщения. В нашем
-                      издательстве нет вакансий «Наборщик текстов». Если вы
-                      встретите схожее объявление, пожалуйста, обратите внимание
-                      на адрес электронной почты: официальные почтовые домены
-                      издательской группы - @atticus-group.ru и @azbooka.spb.ru.
-                      Эти домены присутствуют во всех письмах от сотрудников
-                      издательства. Пожалуйста, будьте внимательны!
+                      Dear readers! "Publishing Group "Azbuka-Atticus"
+                      it became known that cases of using our
+                      trademarks "Makhaon", "Azbuka" for fraudulent purposes,
+                      including job offers
+                      publishing house subject to preliminary translation
+                      funds.We post information about vacancies only on
+                      resources that are attentive to the rule of law
+                      ads(hh.ru, Superjob и подобные) and NEVER
+                      We ask applicants to transfer any money to us - this is
+                      illegal. Publisher employees do not contact
+                      applicants through messengers VK, Facebook, Whatsapp,
+                      Telegram and never write in private messages. In our
+                      There are no vacancies in the publishing house Typewriter. If you
+                      come across a similar ad, please pay attention
+                      to email address: official email domains
+                      publishing group - @atticus-group.ru and @azbooka.spb.ru.
+                      These domains are present in all emails from employees
+                      publishing houses. Please pay attention!
                     </Typography>
                   </Typography>
                 </Grid>
