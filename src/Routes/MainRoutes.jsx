@@ -49,22 +49,22 @@ const MainRoutes = () => {
     {
       link: "/contacts",
       element: <ContactUsPage />,
-      id: 6,
+      id: 7,
     },
     {
       link: "/register",
       element: <RegisterPage />,
-      id: 9,
+      id: 8,
     },
     {
       link: "/about",
       element: <AboutUs />,
-      id: 10,
+      id: 9,
     },
     {
       link: "/moshennik",
       element: <Moshennik/>,
-      id: 11,
+      id: 10,
     },
   ];
   return (

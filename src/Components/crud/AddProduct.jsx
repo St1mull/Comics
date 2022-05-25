@@ -12,8 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/CrudContextProvider";
 
 const AddProduct = () => {
-  const { addProduct } = useProducts();
-
+  const { addProduct, getProductDetails } = useProducts(); 
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -30,6 +29,14 @@ const AddProduct = () => {
       [e.target.name]: e.target.value,
     };
     setProduct(obj);
+  };
+
+  const handleInpFile = (e) => {
+    let file = e.target.files[0];
+    setProduct({
+      ...product,
+      image: file,
+    });
   };
 
   return (
@@ -74,7 +81,7 @@ const AddProduct = () => {
           id="outlined-helperText"
           name="image"
           size="small"
-          onChange={handleInp}
+          onChange={handleInpFile}
           type="file"
         />
         <FormControl fullWidth
@@ -93,8 +100,8 @@ const AddProduct = () => {
             name="category"
             onChange={handleInp}
           >
-            <MenuItem value={"Манга"}>Манга</MenuItem>
-            <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
+            <MenuItem value={"manga"}>manga</MenuItem>
+            {/* <MenuItem value={"manga"}>МангаМанхва</MenuItem> */}
           </Select>
         </FormControl>
         <TextField
