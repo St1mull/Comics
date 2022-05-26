@@ -5,96 +5,51 @@ import { useProducts } from "../../contexts/CrudContextProvider";
 const ProductDetails = () => {
   const { details } = useCart();
   const { id } = useParams();
-  //   console.log(id);
   const { getProductDetails, productDetails } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
   useEffect(() => {
-    getProductDetails(id);
+    if(Number(id)) {
+      getProductDetails(id);
+    }
   }, []);
+
+  console.log(productDetails);
+
+  const comments = productDetails.comments;
+
 
   return (
     <>
-      <div id="product-details">
+      <div id="product-details" style={{margin: '0 5vw'}}>
         <div className="left">
           <img
             className="product-details-image"
-            src={productDetails.picture}
+            src={productDetails.image}
             alt=""
           />
         </div>
 
         <div className="right">
-          <h4>{productDetails.name}</h4>
-          <br />
-          <p>{productDetails.description}.</p>
-          <br />
-          <h2>€{productDetails.price}</h2>
+          <h4 style={{marginBottom: 20}}>{productDetails.title}</h4>
+          {/* <br /> */}
+          <p style={{marginBottom: 20}}>{productDetails.descriptions}.</p>
+          {/* <br /> */}
+          <h2 style={{marginBottom: 20}}>€{productDetails.price}</h2>
           <button
             onClick={() => addProductToCart(productDetails)}
             className="cart-button"
           >
-            ADD TO CART WWWWWW
+            ADD TO CART
           </button>
 
-          <div className="wine-details">
-            <div className="wine-details-left">
-              <div className="wine-details-left-left">
-                <ul>
-                  <li>Year:</li>
-                  <li>Genre</li>
-                  <li>Country:</li>
-                  <li>Region:</li>
-                </ul>
-              </div>
+          <div className="wine-details" style={{marginBottom: 20}}>
 
-              <div className="wine-details-left-right">
-                <ul>
-                  <li>2020</li>
-                  <li>Shooter</li>
-                  <li>USA</li>
-                  <li>Korsika</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="wine-details-right">
-              <div className="wine-details-left-left">
-                <ul>
-                  <li>Online:</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>Puple:</li>
-                </ul>
-              </div>
-              <div className="wine-details-left-right">
-                <ul>
-                  <li>Yes</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>750</li>
-                </ul>
-              </div>
+            <div className="wine-details-right" style={{width: '100%', display:'flex', justifyContent: 'center'}}>
+              <ul >
+                {comments ? (comments.map((item) => <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20}}><h4 style={{marginBottom: 10}}>{item.user}</h4><li key={item.id}>{item.text}</li></div>)) : ''}
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="recomendations">
-        <div>
-          <h4>BEST WITH</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium modi repudiandae vero odio pariatur expedita, et eum
-            harum quam!
-          </p>
-        </div>
-
-        <div>
-          <h4>HOW TO KEEP</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
-            iusto recusandae necessitatibus obcaecati id inventore enim minus
-            commodi quisquam, ducimus, expedita officiis at maxime porro.
-          </p>
         </div>
       </div>
     </>

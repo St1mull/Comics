@@ -112,29 +112,47 @@ const CrudContextProvider = ({ children }) => {
     let formData = new FormData()
     formData.append('title', newProduct.title)
     formData.append('price', newProduct.price)
-    formData.append('image', newProduct.image)
     formData.append('category', newProduct.category)
     formData.append('id', newProduct.id)
+    if(  typeof newProduct.image !== 'string') {
+      formData.append('image', newProduct.image)
+    }
     let id = formData.get('id')
     console.log(id);
     await axios.patch(`${APIID}${id}/`, formData,config);
     getProducts()
-
+    navigate('/products')
   }
 
-  const fetchByParams = async (query, value) => {
-    const search = new URLSearchParams(location.search);
+  // const fetchByParams = async (query, value) => {
+  //   const search = new URLSearchParams(location.search);
+  //   console.log(location)
 
-    if (value === 'all') {
-      search.delete(query);
-    } else {
-      search.set(query, value);
-    }
-    const url = `${location.pathname}?${search.toString()}`;
-    console.log(search.toString());
-    console.log(url);
-    navigate(url);
-  };
+  //   if (value === 'all') {
+  //     search.delete(query);
+  //   } else {
+  //     search.set(query, value);
+  //   }
+  //   const url = `${location.pathname}?${search.toString()}`;
+  //   console.log(search.toString());
+  //   console.log(url);
+  //   navigate(url);
+  // };
+
+  
+  const addComment = (comments) => {
+    
+    let token = JSON.parse(localStorage.getItem('token'));
+    const Authorization = `Bearer ${token.access}`;
+
+    const config ={
+      headers: {'Content-Type':'multipart/form-data',Authorization},
+    };
+
+    let formData = new FormData()
+    formData.append('text', comments.text)
+    
+  }
 
   return <productContext.Provider value={{
     products: state.products,
@@ -144,7 +162,7 @@ const CrudContextProvider = ({ children }) => {
     deleteProduct,
     saveEditedProduct,
     getProductDetails,
-    fetchByParams,
+    // fetchByParams,
     
   }}
   >{children}</productContext.Provider>

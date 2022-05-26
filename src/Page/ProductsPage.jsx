@@ -84,12 +84,12 @@ const ProductsPage = () => {
     </Box>
     <Box sx={{display: 'flex', justifyContent: 'center'}}>
       <Grid justify="center" sx={{ display: "flex" }}>
-        <Grid item md={9}>
+        <Grid item md={12}>
           <ProductList />
         </Grid>
-        <Grid item md={3} sx={{ margin: 3 }}>
+        {/* <Grid item md={3} sx={{ margin: 3 }}>
           <SideBar />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
     </>
