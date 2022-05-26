@@ -157,12 +157,8 @@ const CrudContextProvider = ({ children }) => {
     deleteProduct,
     saveEditedProduct,
     getProductDetails,
-<<<<<<< HEAD
     fetchByParams,
     searchFilter,
-=======
-    // fetchByParams,
->>>>>>> 56cb89dc3c18e73860b234a0b58557d49a22139f
     
   }}
   >{children}</productContext.Provider>
