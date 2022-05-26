@@ -73,7 +73,7 @@ const EditCard = () => {
         size="small"
         onChange={handleInp}
       />
-      <TextField
+      {/* <TextField
         sx={{
           marginBottom: "10px",
           borderColor: "black",
@@ -87,7 +87,21 @@ const EditCard = () => {
         name="image"
         size="small"
         onChange={handleInpFile}
-      />
+      /> */}
+
+        <TextField
+          sx={{
+            marginBottom: "10px",
+            borderColor: "black",
+            backgroundColor: "whitesmoke",
+          }}
+          fullWidth
+          id="outlined-helperText"
+          name="image"
+          size="small"
+          onChange={handleInpFile}
+          type="file"
+        />
 
       <FormControl
         fullWidth

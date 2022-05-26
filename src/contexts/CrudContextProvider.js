@@ -113,14 +113,16 @@ const CrudContextProvider = ({ children }) => {
     let formData = new FormData()
     formData.append('title', newProduct.title)
     formData.append('price', newProduct.price)
-    formData.append('image', newProduct.image)
     formData.append('category', newProduct.category)
     formData.append('id', newProduct.id)
+    if(  typeof newProduct.image !== 'string') {
+      formData.append('image', newProduct.image)
+    }
     let id = formData.get('id')
     console.log(id);
     await axios.patch(`${APIID}${id}/`, formData,config);
     getProducts()
-
+    navigate('/products')
   }
 
   const fetchByParams = async(query, value)=>{
@@ -155,8 +157,12 @@ const CrudContextProvider = ({ children }) => {
     deleteProduct,
     saveEditedProduct,
     getProductDetails,
+<<<<<<< HEAD
     fetchByParams,
     searchFilter,
+=======
+    // fetchByParams,
+>>>>>>> 56cb89dc3c18e73860b234a0b58557d49a22139f
     
   }}
   >{children}</productContext.Provider>
