@@ -8,19 +8,24 @@ const ProductDetails = () => {
   const { getProductDetails, productDetails } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
   useEffect(() => {
-    if(Number(id)) {
-      getProductDetails(id);
-    }
+    getProductDetails(id);
   }, []);
 
   console.log(productDetails);
 
   const comments = productDetails.comments;
 
-
   return (
-    <>
-      <div id="product-details" style={{margin: '0 5vw'}}>
+    <div>
+      <div
+        id="product-details"
+        style={{
+          margin: "0 5vw",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <div className="left">
           <img
             className="product-details-image"
@@ -30,11 +35,11 @@ const ProductDetails = () => {
         </div>
 
         <div className="right">
-          <h4 style={{marginBottom: 20}}>{productDetails.title}</h4>
+          <h4 style={{ marginBottom: 20 }}>{productDetails.title}</h4>
           {/* <br /> */}
-          <p style={{marginBottom: 20}}>{productDetails.descriptions}.</p>
+          <p style={{ marginBottom: 20 }}>{productDetails.descriptions}.</p>
           {/* <br /> */}
-          <h2 style={{marginBottom: 20}}>€{productDetails.price}</h2>
+          <h2 style={{ marginBottom: 20 }}>€{productDetails.price}</h2>
           <button
             onClick={() => addProductToCart(productDetails)}
             className="cart-button"
@@ -42,17 +47,37 @@ const ProductDetails = () => {
             ADD TO CART
           </button>
 
-          <div className="wine-details" style={{marginBottom: 20}}>
-
-            <div className="wine-details-right" style={{width: '100%', display:'flex', justifyContent: 'center'}}>
-              <ul >
-                {comments ? (comments.map((item) => <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20}}><h4 style={{marginBottom: 10}}>{item.user}</h4><li key={item.id}>{item.text}</li></div>)) : ''}
+          <div className="wine-details" style={{ marginBottom: 20 }}>
+            <div
+              className="wine-details-right"
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <ul>
+                {comments
+                  ? comments.map((item) => (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          padding: 20,
+                        }}
+                      >
+                        <h4 style={{ marginBottom: 10 }}>{item.user}</h4>
+                        <li key={item.id}>{item.text}</li>
+                      </div>
+                    ))
+                  : ""}
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

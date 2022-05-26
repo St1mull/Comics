@@ -119,12 +119,11 @@ const CrudContextProvider = ({ children }) => {
       formData.append('image', newProduct.image)
     }
     let id = formData.get('id')
-    console.log(id);
     await axios.patch(`${APIID}${id}/`, formData,config);
     getProducts()
     navigate('/products')
   }
-
+  
   const fetchByParams = async(query, value)=>{
     if(value==='all'){
       getProducts()

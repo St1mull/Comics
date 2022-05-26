@@ -19,6 +19,8 @@ const EditCard = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState(productDetails);
 
+  console.log(productDetails);
+
   useEffect(() => {
     setProduct(productDetails);
   }, [productDetails]);
@@ -41,6 +43,7 @@ const EditCard = () => {
       image: file,
     });
   };
+  console.log(saveEditedProduct(product));
   return (
     <Box sx={{ width: "60vw", margin: "10vh auto" }}>
       <TextField
@@ -89,19 +92,19 @@ const EditCard = () => {
         onChange={handleInpFile}
       /> */}
 
-        <TextField
-          sx={{
-            marginBottom: "10px",
-            borderColor: "black",
-            backgroundColor: "whitesmoke",
-          }}
-          fullWidth
-          id="outlined-helperText"
-          name="image"
-          size="small"
-          onChange={handleInpFile}
-          type="file"
-        />
+      <TextField
+        sx={{
+          marginBottom: "10px",
+          borderColor: "black",
+          backgroundColor: "whitesmoke",
+        }}
+        fullWidth
+        id="outlined-helperText"
+        name="image"
+        size="small"
+        onChange={handleInpFile}
+        type="file"
+      />
 
       <FormControl
         fullWidth
@@ -120,8 +123,9 @@ const EditCard = () => {
           name="category"
           onChange={handleInp}
         >
-          <MenuItem value={"Manga"}>manga</MenuItem>
-          <MenuItem value={"МангаМанхва"}>МангаМанхва</MenuItem>
+          <MenuItem value={"manga"}>manga</MenuItem>
+          <MenuItem value={"manhwa"}>manhwa</MenuItem>
+          <MenuItem value={"marvel"}>marvel</MenuItem>
         </Select>
       </FormControl>
       <TextField

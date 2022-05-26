@@ -9,18 +9,19 @@ const ProductList = () => {
   const { products, getProducts } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  
+  console.log(products);
+
   useEffect(() => {
     getProducts();
   }, []);
-  
+
   useEffect(() => {
     getProducts();
     setPage(1);
   }, [searchParams]);
-  
+
   const [page, setPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 2;
   const count = Math.ceil(products.length / itemsPerPage);
 
   const handleChange = (e, p) => {
@@ -38,14 +39,19 @@ const ProductList = () => {
   return (
     <>
       <div
-        sx={{ justifyContent: "center", display: "flex", flexWrap: "wrap", flexDirection: 'column' }}
+        sx={{
+          justifyContent: "center",
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: "column",
+        }}
       >
         <Box
           sx={{
-            maxWidth: '100%',
+            maxWidth: "100%",
             display: "flex",
             flexWrap: "wrap",
-            flexDirection: 'column',
+            flexDirection: "column",
             minHeight: "40vh",
             mb: "3.5vh",
           }}
@@ -59,9 +65,7 @@ const ProductList = () => {
           )}
         </Box>
       </div>
-      <Box
-        sx={{display: 'flex', justifyContent: 'center', marginBottom: 3}}
-      >
+      <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 3 }}>
         <Pagination
           count={count}
           variant="outlined"
