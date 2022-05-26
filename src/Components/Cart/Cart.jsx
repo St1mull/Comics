@@ -50,7 +50,7 @@ export default function Cart() {
   `;
 
   const navigate = useNavigate();
-  console.log(cart);
+  console.log(cart.products);
 
   React.useEffect(() => {
     getCart();
@@ -76,36 +76,37 @@ export default function Cart() {
         aria-label="customized table"
       >
         <TableRow>
-          <StyledTableCell id="cartComponent">Picture</StyledTableCell>
-          <StyledTableCell sx={{ padding: 0 }}>Name</StyledTableCell>
-          <StyledTableCell sx={{ padding: 0 }}>Type</StyledTableCell>
+          <StyledTableCell align="center" id="cartComponent">Picture</StyledTableCell>
+          <StyledTableCell align="center" sx={{ padding: 0 }}>Name</StyledTableCell>
+          <StyledTableCell align="center" sx={{ padding: 0 }}>Category</StyledTableCell>
 
-          <StyledTableCell sx={{ padding: 0 }}>Price</StyledTableCell>
-          <StyledTableCell sx={{ padding: 0 }}>Count</StyledTableCell>
-          <StyledTableCell sx={{ padding: 0 }}>SubPrice</StyledTableCell>
+          <StyledTableCell align="center" sx={{ padding: 0 }}>Price</StyledTableCell>
+          <StyledTableCell align="center" sx={{ padding: 0 }}>Count</StyledTableCell>
+          <StyledTableCell align="center" sx={{ padding: 0 }}>SubPrice</StyledTableCell>
         </TableRow>
 
         <TableBody>
           {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
-              <StyledTableCell component="th" scope="row" sx={{ padding: 0 }}>
-                <img src={row.item.picture} alt="" width="70" height="70" />
+              <StyledTableCell align="center" component="th" scope="row" sx={{ padding: 0 }}>
+                <img src={row.item.image} alt="" width="70" height="70" />
               </StyledTableCell>
-              <StyledTableCell sx={{ padding: 0 }}>
-                {row.item.name}
+              <StyledTableCell align="center" sx={{ padding: 0, margin: '0'}}>
+                {row.item.title}
               </StyledTableCell>
-              <StyledTableCell sx={{ padding: 0 }}>
-                {row.item.type}
+              <StyledTableCell align="center" sx={{ padding: 0 }}>
+                {row.item.category}
               </StyledTableCell>
 
-              <StyledTableCell sx={{ padding: 0 }}>
+              <StyledTableCell align="center" sx={{ padding: 0 }}>
                 {row.item.price}
               </StyledTableCell>
 
-              <StyledTableCell sx={{ padding: "0px" }}>
+              <StyledTableCell align="center" sx={{ padding: "0px",}}>
                 <input
                   className="cartInput1"
                   type="number"
+                  style={{width: '3vw',}}
                   min={1}
                   max={1000}
                   value={row.count}
@@ -115,9 +116,9 @@ export default function Cart() {
                 />
               </StyledTableCell>
 
-              <StyledTableCell>{row.subPrice}</StyledTableCell>
+              <StyledTableCell align="center">{row.subPrice}</StyledTableCell>
 
-              <StyledTableCell>
+              <StyledTableCell align="center">
                 <IconButton onClick={() => deleteCartProduct(row.item.id)}>
                   <DeleteOutlineIcon />
                 </IconButton>
@@ -126,53 +127,6 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
-
-      {cart?.products.map((row) => (
-        <Box
-          key={row.item.id}
-          sx={{
-            display: {
-              xs: "block",
-              sm: "none",
-              margin: "30px",
-              fontSize: "20px",
-            },
-          }}
-        >
-          <img
-            src={row.item.picture}
-            alt=""
-            width="90%"
-            className="cartImage"
-          />
-          <br />
-          <div className="cartSpan">{row.item.name}</div>
-          <br />
-          <div className="cartSpan">{row.item.price}$</div>
-          <br />
-          <div className="cartSpan">
-            {" "}
-            Count
-            <input
-              className="cartInput "
-              type="number"
-              min={1}
-              max={1000}
-              value={row.count}
-              onChange={(e) => changeProductCount(e.target.value, row.item.id)}
-            />
-          </div>
-          <div className="cartSpan">
-            SubPrice: {row.subPrice}
-            <IconButton
-              color={"error"}
-              onClick={() => deleteCartProduct(row.item.id)}
-            >
-              <DeleteOutlineIcon />
-            </IconButton>
-          </div>
-        </Box>
-      ))}
 
       <Grid container sx={{ m: "0 10px", width: "200px", height: "100%" }}>
         <Box

@@ -62,6 +62,39 @@ const Section2 = () => {
   return (
     <div>
       <main>
+        <Typography
+          component="h2"
+          align="center"
+          variant="h4 "
+          // color="text.danger"
+          gutterBottom
+          sx={{
+            color: "#bfbfbf",
+            fontWeight: "100",
+            fontSize: "20px",
+          }}
+        >
+          Our Comics
+        </Typography>
+        <Typography
+          // component="h1"
+          align="center"
+          // variant="h4 "
+          // color="text.danger"
+          // gutterBottom
+          // mr={5}
+          sx={{
+            color: "black",
+            fontSize: "3rem",
+            fontWeight: "100",
+          }}
+        >
+          Reed
+          <span style={{ color: "#bfbfbf" }}> Top </span>
+          <span style={{ color: "#29c7ab" }}> 2022</span>
+          <p style={{ color: "#29c7ab" }}>_____</p>
+        </Typography>
+
         <ul className="cards">
           <li>
             <a href="#" className="card">
@@ -596,7 +629,11 @@ const Section2 = () => {
                     // color="text.danger"
                     // gutterBottom
                     mb={5}
-                    sx={{ color: "white", fontSize: "3rem", fontWeight: "700" }}
+                    sx={{
+                      color: "white",
+                      fontSize: "3rem",
+                      fontWeight: "700",
+                    }}
                   >
                     How to
                     <span style={{ color: "#bfbfbf", fontWeight: "100" }}>
@@ -605,6 +642,7 @@ const Section2 = () => {
                     </span>
                     <p style={{ color: "#29c7ab" }}>_____</p>
                   </Typography>
+
                   <Accordion
                     expanded={expanded === "panel1"}
                     onChange={handleChange("panel1")}

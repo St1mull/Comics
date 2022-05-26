@@ -12,8 +12,8 @@ import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import "../Home/Home.css";
 const Home = () => {
   return (
-    <div className="noneHome">
-      <header>
+    <div>
+      <header className="noneHome">
         <Box>
           <Paper sx={{ maxWidth: "100%", boxShadow: 0 }}>
             <Container
@@ -143,7 +143,11 @@ const Home = () => {
                     // color="text.danger"
                     // gutterBottom
                     // mr={5}
-                    sx={{ color: "black", fontSize: "3rem", fontWeight: "100" }}
+                    sx={{
+                      color: "black",
+                      fontSize: "3rem",
+                      fontWeight: "100",
+                    }}
                   >
                     Comix
                     <span style={{ color: "#bfbfbf" }}>Con </span>

@@ -23,6 +23,7 @@ const AboutUs = () => {
       >
         About Us
       </Typography>
+
       <Box
         sx={{
           // bgcolor: "background.paper",
@@ -58,10 +59,12 @@ const AboutUs = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing Lorem,
                   ipsum..
                 </Typography>
+
                 <Typography
                   variant="h5"
                   color="text.secondary"
                   paragraph
+                  // data-aos="fade-right"
                   sx={{
                     margin: "auto",
                     marginTop: "10px",
@@ -74,6 +77,7 @@ const AboutUs = () => {
                   eius reprehenderit deleniti beatae possimus! Nostrum,
                   praesentium earum? Distinctio, consequatur.
                 </Typography>
+
                 <Typography
                   component="h1"
                   variant="h4 "
@@ -103,6 +107,7 @@ const AboutUs = () => {
                   eius reprehenderit deleniti beatae possimus! Nostrum,
                   praesentium earum? Distinctio, consequatur.
                 </Typography>
+
                 <Typography
                   component="h1"
                   variant="h4 "
@@ -145,6 +150,7 @@ const AboutUs = () => {
           </Container>
         </Paper>
       </Box>
+
       <Typography
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
@@ -156,6 +162,7 @@ const AboutUs = () => {
       >
         Our Partners
       </Typography>
+
       <Box
         sx={{
           // bgcolor: "background.paper",
@@ -265,6 +272,7 @@ const AboutUs = () => {
           </Container>
         </Paper>
       </Box>
+
       <Typography
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
@@ -276,6 +284,7 @@ const AboutUs = () => {
       >
         Our Team
       </Typography>
+
       <div className="main">
         <div className="profile-card">
           <div className="img">

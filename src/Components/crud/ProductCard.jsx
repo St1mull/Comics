@@ -23,20 +23,27 @@ const ProductCard = ({ item }) => {
 
   const {
     handleLogout,
-    user: { email },
+    user,
   } = useAuth();
 
   return (
     <div>
-      <Card sx={{ minHeight: 350, minWidth: 220, m: 2 }}>
+      <Card sx={{ height: 900, width: 900, m: 3 }}>
         <CardMedia
           sx={{ width: "300" }}
           component="img"
-          height="300"
+          height="700"
           image={item.image}
           alt={item.title}
         />
-        <CardContent>
+        <CardContent 
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           <Typography
             sx={{ display: "flex", textAlign: "center" }}
             gutterBottom
@@ -45,32 +52,36 @@ const ProductCard = ({ item }) => {
           >
             {item.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.descriptions}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 1}}>
             {item.category}
           </Typography>
           <Typography
             variant="body2"
-            sx={{ color: "black", fontWeight: "bold" }}
+            sx={{ color: "black", fontWeight: "bold", }}
           >
             {item.price} $
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          {user == ADMIN ? ( <>
           <Button size="small" onClick={() => deleteProduct(item.id)}>
             Delete
           </Button>
           <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
             Edit
           </Button>
-          <IconButton onClick={() => addProductToCart(item)}>
+          </>) : 
+          ( <><IconButton onClick={() => addProductToCart(item)}>
             <ShoppingBag color={checkProductInCart(item.id) ? "warning" : ""} />
           </IconButton>
           <IconButton onClick={() => navigate(`/products/${item.id}`)}>
             <MoreHoriz />
-          </IconButton>
+          </IconButton></>)}
         </CardActions>
       </Card>
     </div>
