@@ -16,9 +16,9 @@ const ContactUs = () => {
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
         component="h4"
-        align="center"
+        // align="center"s
         p={2}
-        pl={5}
+        pl={10}
         pt={3}
       >
         Get in touch

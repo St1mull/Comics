@@ -12,7 +12,7 @@ import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import "../Home/Home.css";
 const Home = () => {
   return (
-    <div>
+    <div className="noneHome">
       <header>
         <Box>
           <Paper sx={{ maxWidth: "100%", boxShadow: 0 }}>

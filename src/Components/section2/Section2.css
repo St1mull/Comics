@@ -1,11 +1,14 @@
-.Section2PageContainer{
-    background-image: url('https://www.odindesignthemes.com/theBebop/comic/images/header-bg.jpg');
-    /* height: 120vh; */
-    /* max-height: 120vh; */
+.section2Page{
+    background: url('https://www.odindesignthemes.com/theBebop/comic/images/header-bg.jpg');
+    /* height: 120vh;
+    max-height: 120vh; */
+    /* background-color: #604575; */
+    
 }
 :root {
     --surface-color: #604575;
     --curve: 40;
+  
   }
   
  
@@ -54,7 +57,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
     padding: 2em;
     border-radius: calc(var(--curve) * 1px) 0 0 0;    
     background-color: var(--surface-color);

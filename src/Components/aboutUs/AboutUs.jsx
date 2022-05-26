@@ -135,6 +135,7 @@ const AboutUs = () => {
               </Grid>
 
               <CardMedia
+                className="headerImg"
                 component="img"
                 sx={{ width: "36%", marginBottom: "130px" }}
                 image="https://xlm.ru/storage/uploads/images/2021/07/21/z4rm5DXqFxC5FlTKwaMnPMq1IAerAE9TV2ARMCQR.jpeg"
@@ -254,6 +255,7 @@ const AboutUs = () => {
               </Grid>
 
               <CardMedia
+                className="headerImg"
                 component="img"
                 sx={{ width: "36%", cursor: "pointer" }}
                 image="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png"

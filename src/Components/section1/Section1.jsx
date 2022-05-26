@@ -297,7 +297,7 @@ const Section1 = () => {
                       sx={{
                         height: 255,
                         maxWidth: 400,
-                        width: "100%",
+                        width: "85%",
                         p: 2,
                         marginTop: "50px",
                         textAlign: "center",

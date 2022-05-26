@@ -10,3 +10,10 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+@media (max-width: 635px) { 
+    .noneHome{
+        display: none;
+    }
+  
+   }
