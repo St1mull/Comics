@@ -37,16 +37,15 @@ const ProductList = () => {
 
   return (
     <>
-      <Grid
-        item
-        sx={{ justifyContent: "center", display: "flex", flexWrap: "wrap" }}
-        md={9}
+      <div
+        sx={{ justifyContent: "center", display: "flex", flexWrap: "wrap", flexDirection: 'column' }}
       >
         <Box
           sx={{
-            maxWidth: '45%',
+            maxWidth: '100%',
             display: "flex",
             flexWrap: "wrap",
+            flexDirection: 'column',
             minHeight: "40vh",
             mb: "3.5vh",
           }}
@@ -59,15 +58,19 @@ const ProductList = () => {
             <h2>Loading...</h2>
           )}
         </Box>
-
+      </div>
+      <Box
+        sx={{display: 'flex', justifyContent: 'center', marginBottom: 3}}
+      >
         <Pagination
           count={count}
           variant="outlined"
           shape="rounded"
           onChange={handleChange}
           page={page}
+          align="center"
         />
-      </Grid>
+      </Box>
     </>
   );
 };

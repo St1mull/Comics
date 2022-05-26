@@ -122,6 +122,20 @@ const CrudContextProvider = ({ children }) => {
 
   }
 
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(location.search);
+
+    if (value === 'all') {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${location.pathname}?${search.toString()}`;
+    console.log(search.toString());
+    console.log(url);
+    navigate(url);
+  };
+
   return <productContext.Provider value={{
     products: state.products,
     productDetails: state.productDetails,
@@ -130,7 +144,7 @@ const CrudContextProvider = ({ children }) => {
     deleteProduct,
     saveEditedProduct,
     getProductDetails,
-  
+    fetchByParams,
     
   }}
   >{children}</productContext.Provider>
