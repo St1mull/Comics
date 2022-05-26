@@ -16,6 +16,9 @@ import "../section2/Section2.css";
 import StarIcon from "@mui/icons-material/Star";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
+// const navigate = useNavigate();
 
 const labels = {
   0.5: "Useless",
@@ -59,29 +62,64 @@ const Section2 = () => {
   return (
     <div>
       <main>
-        <ul class="cards">
+        <Typography
+          component="h2"
+          align="center"
+          variant="h4 "
+          // color="text.danger"
+          gutterBottom
+          sx={{
+            color: "#bfbfbf",
+            fontWeight: "100",
+            fontSize: "20px",
+          }}
+        >
+          Our Comics
+        </Typography>
+        <Typography
+          // component="h1"
+          align="center"
+          // variant="h4 "
+          // color="text.danger"
+          // gutterBottom
+          // mr={5}
+          sx={{
+            color: "black",
+            fontSize: "3rem",
+            fontWeight: "100",
+          }}
+        >
+          Reed
+          <span style={{ color: "#bfbfbf" }}> Top </span>
+          <span style={{ color: "#29c7ab" }}> 2022</span>
+          <p style={{ color: "#29c7ab" }}>_____</p>
+        </Typography>
+
+        <ul className="cards">
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/tales_of_suspense_059.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/1comics">
+                <img
+                  src="http://cm-project.com/uploads/posters/tales_of_suspense_059.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9lYOIYob45FamPRgLQJxuINgnTm7NB4jaQ&usqp=CAU"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">Jessica Parker</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">Disturbing Stories</h3>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "180px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -113,38 +151,38 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores, blanditiis?
+                <p className="card__description">
+                  Marvel follows in the footsteps of its Atlas takeover and
+                  publishes crazy sci-fi stories
                 </p>
               </div>
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/harleen_01.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/2comics">
+                <img
+                  src="http://cm-project.com/uploads/posters/harleen_01.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://img.freepik.com/free-vector/halloween-quotes-svg-design-lettering_22345-1246.jpg"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">kim Cattrall</h3>
-                    <span class="card__tagline">
-                      Lorem ipsum dolor sit amet consectetur
-                    </span>
+                  <div className="card__header-text">
+                    <h3 className="card__title"> Harleen</h3>
+                    <span className="card__tagline">blanditiis dolor</span>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -180,36 +218,37 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores, blanditiis?
+                <p className="card__description">
+                  sit amet consectetur adipisicing elit. Asperiores, blanditiis?
                 </p>
               </div>
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/a_a_the_o_5.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/3comics">
+                <img
+                  src="http://img.drawnstories.ru/img/DC-Comics/shazam/shazam-v3/shazam-v3-001/000.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTujpoMDjSB0tZDxAIQYLKLCvIVpJSArgSw&usqp=CAU"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">Jessica Parker</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">Shazam! Tom 3</h3>
 
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -241,35 +280,37 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores, blanditiis?
+                <p className="card__description">
+                  During the year spent in the foster family of the Vasquez,
+                  Billy Batson managed
                 </p>
               </div>
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/animosity_006.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/4comics">
+                <img
+                  src="http://img.drawnstories.ru/img/Valiant/Bloodshot/Bloodshot/Bloodshot-011/000.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://w7.pngwing.com/pngs/870/61/png-transparent-comics-comic-book-others-comics-comic-book-logo.png"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">kim Cattrall</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">Bloodshot</h3>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -301,37 +342,39 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores, blanditiis?
+                <p className="card__description">
+                  is the pinnacle of human technological achievement and the
+                  most...
                 </p>
               </div>
             </a>
           </li>
         </ul>
-        <ul class="cards">
+        <ul className="cards">
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/morbius_03.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/5comics">
+                <img
+                  src="http://cm-project.com/uploads/posters/morbius_03.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://img.freepik.com/free-vector/halloween-quotes-svg-design-lettering_22345-1246.jpg"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">Jessica Parker</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">Jessica Parker</h3>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -363,7 +406,7 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
+                <p className="card__description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Asperiores, blanditiis?
                 </p>
@@ -371,27 +414,29 @@ const Section2 = () => {
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/dc_801.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/6comics">
+                <img
+                  src="http://img.drawnstories.ru/img/DC-Comics/Final-Crisis/rogues-revenge/rogues-revenge-002/000.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTujpoMDjSB0tZDxAIQYLKLCvIVpJSArgSw&usqp=CAU"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">kim Cattrall</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">kim Cattrall</h3>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -423,7 +468,7 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
+                <p className="card__description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Asperiores, blanditiis?
                 </p>
@@ -431,28 +476,30 @@ const Section2 = () => {
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/rogue_one_05.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/7comics">
+                <img
+                  src="http://img.drawnstories.ru/img/Marvel-Comics/StarWars/rogue-one-cassian-and-k2so/rogue-one-cassian-and-k2so-001/000.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://www.freesvgdownload.com/wp-content/uploads/2021/11/star-wars-coffe-starbucks.jpg"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">Jessica Parker</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">Jessica Parker</h3>
 
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -484,7 +531,7 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
+                <p className="card__description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Asperiores, blanditiis?
                 </p>
@@ -492,27 +539,29 @@ const Section2 = () => {
             </a>
           </li>
           <li>
-            <a href="#" class="card">
-              <img
-                src="http://cm-project.com/uploads/posters/fire_power_001.jpg"
-                class="card__image"
-                alt=""
-              />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" className="card">
+              <Link to="/8comics">
+                <img
+                  src="http://cm-project.com/uploads/posters/fire_power_001.jpg"
+                  className="card__image"
+                  alt=""
+                />
+              </Link>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <img
-                    class="card__thumb"
+                    className="card__thumb"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9lYOIYob45FamPRgLQJxuINgnTm7NB4jaQ&usqp=CAU"
                     alt=""
                   />
-                  <div class="card__header-text">
-                    <h3 class="card__title">kim Cattrall</h3>
+                  <div className="card__header-text">
+                    <h3 className="card__title">kim Cattrall</h3>
                     <Box
                       sx={{
-                        width: "300px",
+                        width: "190px",
                         display: "flex",
                         alignItems: "center",
                         color: "#29c7ab",
@@ -544,7 +593,7 @@ const Section2 = () => {
                     </Box>
                   </div>
                 </div>
-                <p class="card__description">
+                <p className="card__description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Asperiores, blanditiis?
                 </p>
@@ -557,7 +606,7 @@ const Section2 = () => {
         <Box>
           <Paper sx={{ maxWidth: "100%", boxShadow: 0 }}>
             <Container
-              className="Section2PageContainer"
+              className="section2Page"
               maxWidth="xl"
               sx={{
                 display: "flex",
@@ -580,7 +629,11 @@ const Section2 = () => {
                     // color="text.danger"
                     // gutterBottom
                     mb={5}
-                    sx={{ color: "white", fontSize: "3rem", fontWeight: "700" }}
+                    sx={{
+                      color: "white",
+                      fontSize: "3rem",
+                      fontWeight: "700",
+                    }}
                   >
                     How to
                     <span style={{ color: "#bfbfbf", fontWeight: "100" }}>
@@ -589,6 +642,7 @@ const Section2 = () => {
                     </span>
                     <p style={{ color: "#29c7ab" }}>_____</p>
                   </Typography>
+
                   <Accordion
                     expanded={expanded === "panel1"}
                     onChange={handleChange("panel1")}

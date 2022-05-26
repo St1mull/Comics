@@ -8,6 +8,7 @@
   .main{
     width: 100%;
     height: 100vh;
+    margin-bottom: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,3 +86,13 @@
 .fab {
   font-family: "Font Awesome 6 Brands" !important;
 }
+
+@media (max-width: 540px) { 
+  .main{
+    /* display: none; */
+    /* width: 50px; */
+    margin-top: 80px;
+    height: 200vh;
+  }
+
+ }

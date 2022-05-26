@@ -67,18 +67,15 @@ const Navbar = () => {
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-           
           >
-             <img
+            <img
               id="logo"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZvQe5FasnsyYit5nLHUebcdODor2kro0mw&usqp=CAU"
-              width='90px'
-              heigth='80px'
+              src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/922/7343835922_bb88bce2-48f3-488c-9eb9-000ec0aaae8a.png?cb=1653546157"
+              width="90px"
+              heigth="80px"
               alt=""
             />
-
           </Typography>
-          
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -133,7 +130,7 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            LOGO
+            KCOMICS
           </Typography>
           <Box
             sx={{
@@ -179,14 +176,14 @@ const Navbar = () => {
           </Box>
 
           <Tooltip title="Favorites" className="navbar-icon">
-            <IconButton sx={{ p: 0, color: 'white' }}>
+            <IconButton sx={{ p: 0, color: "white" }}>
               <Favorite />
             </IconButton>
           </Tooltip>
 
           <Link to="/cart">
             <Tooltip title="Cart" className="navbar-icon">
-              <IconButton sx={{ p: 0,  color: 'white'}}>
+              <IconButton sx={{ p: 0, color: "white" }}>
                 <Badge badgeContent={count} color="error">
                   <ShoppingBag />
                 </Badge>

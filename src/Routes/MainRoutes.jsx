@@ -16,6 +16,14 @@ import Moshennik from "../Components/moshennik/Moshennik";
 import Cart from "../Components/Cart/Cart";
 import ProductDetailsPage from "../Page/ProductDetailsPage";
 import EditProductPage from "../Page/EditProductPage";
+import FirstComics from "../ComicsPage/FirstComics/FirstComics";
+import SecondComics from "../ComicsPage/SecondComics/SecondComics";
+import FourComics from "../ComicsPage/FourComics/FourComics";
+import ThreeComics from "../ComicsPage/ThreeComics/ThreeComics";
+import FiveComics from "../ComicsPage/AllComicsPage/FiveComics";
+import SixComics from "../ComicsPage/AllComicsPage/SixComics";
+import SevenComics from "../ComicsPage/AllComicsPage/SevenComics";
+import EightComics from "../ComicsPage/AllComicsPage/EightComics";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -83,6 +91,46 @@ const MainRoutes = () => {
       link: "/edit/:id",
       element: <EditProductPage />,
       id: 13,
+    },
+    {
+      link: "/1comics",
+      element: <FirstComics />,
+      id: 14,
+    },
+    {
+      link: "/2comics",
+      element: <SecondComics />,
+      id: 15,
+    },
+    {
+      link: "/3comics",
+      element: <ThreeComics />,
+      id: 16,
+    },
+    {
+      link: "/4comics",
+      element: <FourComics />,
+      id: 17,
+    },
+    {
+      link: "/5comics",
+      element: <FiveComics />,
+      id: 18,
+    },
+    {
+      link: "/6comics",
+      element: <SixComics />,
+      id: 19,
+    },
+    {
+      link: "/7comics",
+      element: <SevenComics />,
+      id: 20,
+    },
+    {
+      link: "/8comics",
+      element: <EightComics />,
+      id: 21,
     },
   ];
   return (

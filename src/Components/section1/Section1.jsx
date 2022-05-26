@@ -80,6 +80,7 @@ const Section1 = () => {
           <span style={{ color: "#29c7ab" }}> Highlights</span>
           <p style={{ color: "#29c7ab" }}>_____</p>
         </Typography>
+
         <Box
           sx={{
             display: "flex",
@@ -297,7 +298,7 @@ const Section1 = () => {
                       sx={{
                         height: 255,
                         maxWidth: 400,
-                        width: "100%",
+                        width: "85%",
                         p: 2,
                         marginTop: "50px",
                         textAlign: "center",

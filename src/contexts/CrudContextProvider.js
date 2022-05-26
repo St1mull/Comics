@@ -3,8 +3,9 @@ import React, { createContext, useContext, useReducer } from 'react';
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AddShoppingCartOutlined } from '@mui/icons-material';
-// import { API} from '../helpers/Consts'
+
 const APIID = 'https://comicskatana.herokuapp.com/api/v1/comics/'
+const APISH = 'https://comicskatana.herokuapp.com/api/v1/'
 
 export const productContext = createContext();
 
@@ -112,15 +113,41 @@ const CrudContextProvider = ({ children }) => {
     let formData = new FormData()
     formData.append('title', newProduct.title)
     formData.append('price', newProduct.price)
-    formData.append('image', newProduct.image)
     formData.append('category', newProduct.category)
     formData.append('id', newProduct.id)
+    if(  typeof newProduct.image !== 'string') {
+      formData.append('image', newProduct.image)
+    }
     let id = formData.get('id')
     console.log(id);
     await axios.patch(`${APIID}${id}/`, formData,config);
     getProducts()
-
+    navigate('/products')
   }
+
+  const fetchByParams = async(query, value)=>{
+    if(value==='all'){
+      getProducts()
+    }else{
+        
+      const { data } = await axios(`${APIID}filter/?${query}=${value}`)
+    
+      dispatch({
+        type: 'GET_PRODUCTS',
+        payload: data
+      })
+    }
+      }
+    
+      const searchFilter = async(value)=>{
+      
+        const { data } = await axios(`${APIID}search/?q=${value}`)
+      
+        dispatch({
+          type: 'GET_PRODUCTS',
+          payload: data
+        })
+      }
 
   return <productContext.Provider value={{
     products: state.products,
@@ -130,7 +157,8 @@ const CrudContextProvider = ({ children }) => {
     deleteProduct,
     saveEditedProduct,
     getProductDetails,
-  
+    fetchByParams,
+    searchFilter,
     
   }}
   >{children}</productContext.Provider>

@@ -23,6 +23,7 @@ const AboutUs = () => {
       >
         About Us
       </Typography>
+
       <Box
         sx={{
           // bgcolor: "background.paper",
@@ -58,10 +59,12 @@ const AboutUs = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing Lorem,
                   ipsum..
                 </Typography>
+
                 <Typography
                   variant="h5"
                   color="text.secondary"
                   paragraph
+                  // data-aos="fade-right"
                   sx={{
                     margin: "auto",
                     marginTop: "10px",
@@ -74,6 +77,7 @@ const AboutUs = () => {
                   eius reprehenderit deleniti beatae possimus! Nostrum,
                   praesentium earum? Distinctio, consequatur.
                 </Typography>
+
                 <Typography
                   component="h1"
                   variant="h4 "
@@ -103,6 +107,7 @@ const AboutUs = () => {
                   eius reprehenderit deleniti beatae possimus! Nostrum,
                   praesentium earum? Distinctio, consequatur.
                 </Typography>
+
                 <Typography
                   component="h1"
                   variant="h4 "
@@ -135,6 +140,7 @@ const AboutUs = () => {
               </Grid>
 
               <CardMedia
+                className="headerImg"
                 component="img"
                 sx={{ width: "36%", marginBottom: "130px" }}
                 image="https://xlm.ru/storage/uploads/images/2021/07/21/z4rm5DXqFxC5FlTKwaMnPMq1IAerAE9TV2ARMCQR.jpeg"
@@ -144,6 +150,7 @@ const AboutUs = () => {
           </Container>
         </Paper>
       </Box>
+
       <Typography
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
@@ -155,6 +162,7 @@ const AboutUs = () => {
       >
         Our Partners
       </Typography>
+
       <Box
         sx={{
           // bgcolor: "background.paper",
@@ -254,6 +262,7 @@ const AboutUs = () => {
               </Grid>
 
               <CardMedia
+                className="headerImg"
                 component="img"
                 sx={{ width: "36%", cursor: "pointer" }}
                 image="https://uploads.turbologo.com/uploads/design/hq_preview_image/1847934/draw_svg20210507-22909-18ipq8j.svg.png"
@@ -263,6 +272,7 @@ const AboutUs = () => {
           </Container>
         </Paper>
       </Box>
+
       <Typography
         sx={{ backgroundColor: "whitesmoke" }}
         variant="h3"
@@ -274,6 +284,7 @@ const AboutUs = () => {
       >
         Our Team
       </Typography>
+
       <div className="main">
         <div className="profile-card">
           <div className="img">
