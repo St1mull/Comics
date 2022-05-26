@@ -1,38 +1,41 @@
-import { Box, Container, Grid, Link, Typography } from "@mui/material";
-import React from "react";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import EmailIcon from "@mui/icons-material/Email";
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import Button from "@mui/material/Button";
-import { pink } from "@mui/material/colors";
-import TextField from "@mui/material/TextField";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TelegramIcon from "@mui/icons-material/Telegram";
+import EmailIcon from '@mui/icons-material/Email';
 import DoDisturbAltIcon from "@mui/icons-material/DoDisturbAlt";
-import "./footer.css";
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 const Footer = () => {
   return (
     <Box
-      px={{ xs: 3, sm: 30 }}
-      py={{ xs: 3, sm: 20 }}
-      pb={{ sm: 5 }}
+      px={{ xs: 3, sm: 2 }}
+      py={{ xs: 1, sm: 1 }}
+      pb={{ sm: 1 }}
+      md={4}
       bgcolor="#EEEFFB"
       color="rgb(15 14 15)"
     >
       <Container maxWidth="lg" height="24rem">
-        <Grid container spacing={9}>
-          <Grid item xs={4} sm={3} sx={{ mt: "0.6rem", my: "0.8rem" }}>
+        <Grid container spacing={0}>
+          <Grid item xs={12} sm={3} md={2} sx={{ mt: '0.6rem', my: '0.5rem' }}>
             <Box
+            href='/'
               sx={{
+              
                 fontWeight: "bold",
                 fontSize: "1.1rem",
                 fontFamily: "monospace",
               }}
             >
-             Subscribe to newsletter
+              Subscribe to newsletter
             </Box>
+
+
 
             <Box my={{ xs: 1, sm: 2 }}>
               <TextField id="filled-basic" label="E-mail" variant="filled" />
@@ -41,14 +44,17 @@ const Footer = () => {
             <Box my={{ xs: 1, sm: 3 }}>
               <Button variant="contained">Send</Button>
             </Box>
-            <Box my={{ xs: 1, sm: 3 }}>
+            
+            
+            <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+               href='/'
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
-                color="red"
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
+                md={4}
+                color='red'
               >
-               By clicking on the button, I agree to the processing and storage of my
+                  By clicking on the button, I agree to the processing and storage of my
                 personal data
               </Link>
             </Box>
@@ -59,164 +65,143 @@ const Footer = () => {
             <YouTubeIcon />
           </Grid>
 
-          <Grid item xs={6} sm={3} sx={{ mt: "0.5rem" }}>
+          <Grid item xs={12} sm={6} md={4} sx={{ mt: '0.6rem' }}>
             <Box
               sx={{
-                fontWeight: "bold",
-                fontSize: "1.3rem",
-                color: "black",
-                fontFamily: "monospace",
+                fontWeight: 'bold',
+                fontSize: '1.3rem',
+                color: 'black',
+                fontFamily: 'monospace',
               }}
             >
-              Category
+              Catagories
             </Box>
-            <Box my={{ xs: 1, sm: 2 }}>
+            <Box my={{ xs: 2, sm: 1 }} md={4}>
               <Link
-                href="/"
+                href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
               >
-                ARTICLES AND COLLECTIONS
+               ARTICLES AND COLLECTIONS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+                href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
               >
-               THE AUTHORS
+                THE AUTHORS
+              </Link>
+              </Box>
+            <Box my={{ xs: 1, sm: 2 }}>
+              <Link
+                href='/'
+                color="text.secondary"
+                underline="hover"
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
+              >
+               NEW AUTHORS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+             href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
               >
-                NEW AUTHORS
+                     SERIES
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+                href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
-              >
-                SERIES
-              </Link>
-            </Box>
-            <Box my={{ xs: 1, sm: 2 }}>
-              <Link
-                href="/"
-                color="text.secondary"
-                underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+                sx={{ fontSize: '0.9rem', fontFamily: "monospace"  }}
               >
                 ARCHIVE
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+                href='/'
                 color="inherit"
                 underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+                sx={{ fontSize: '0.9rem' ,fontFamily: "monospace" }}
               ></Link>
             </Box>
           </Grid>
-          <Grid item xs={6} sm={3} sx={{ mt: "0.6rem" }}>
+          <Grid item xs={4} sm={3} sx={{ mt: '0.6rem' }}>
             <Box
               sx={{
-                fontWeight: "bold",
-                fontSize: "1.3rem",
-                color: "black",
-                fontFamily: "monospace",
+                fontWeight: 'bold',
+                fontSize: '1.3rem',
+                color: 'black',
+                fontFamily: 'monospace',
               }}
             >
              About Us
             </Box>
-            <Box my={{ xs: 1, sm: 2 }}>
+            <Box my={{ xs: 1, sm: 1 }}>
               <Link
-                href="/"
+               href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{
-                  fontSize: "0.9rem",
-                  display: "flex",
-                  fontFamily: "monospace",
-                }}
+                sx={{ fontSize: '0.9rem', display: 'flex', fontFamily: "monospace"  }}
               >
-                Contacts
+               Contacts
+              </Link>
+              </Box>
+            <Box my={{ xs: 1, sm: 2 }}>
+              <Link
+               href='/'
+                color="text.secondary"
+                underline="hover"
+                sx={{ fontSize: '0.9rem', display: 'flex', fontFamily: "monospace"  }}
+              >
+                WHERE TO BUY BOOKS
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
+                href='/'
                 color="text.secondary"
                 underline="hover"
-                sx={{
-                  fontSize: "0.9rem",
-                  display: "flex",
-                  fontFamily: "monospace",
-                }}
+                sx={{ fontSize: '0.9rem', display: 'flex', fontFamily: "monospace"  }}
               >
-               WHERE TO BUY BOOKS
+                CERTIFICATION
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
-              <Link
-                href="/"
-                color="text.secondary"
-                underline="hover"
-                sx={{
-                  fontSize: "0.9rem",
-                  display: "flex",
-                  fontFamily: "monospace",
-                }}
-              >
-               CERTIFICATION
-              </Link>
-            </Box>
-            <Box my={{ xs: 1, sm: 2 }}>
-              <Button
+            <Button
                 href="/moshennik"
                 className="btn"
                 variant="secondary"
-                sx={{ backgroundColor: "red", color: "white" }}
+                sx={{ backgroundColor: "red", color: "white", fontFamily: "monospace"  }}
               >
                 <DoDisturbAltIcon />
                 Beware Fraudsters!
               </Button>
             </Box>
+            
           </Grid>
-          <Grid item xs={12} sm={6} md={3} sx={{ mt: "0.6rem" }}>
+          <Grid item xs={12} sm={6} md={3} sx={{ mt: '0.6rem', fontFamily: "monospace"  }}>
             <Box
               sx={{
-                fontWeight: "bold",
-                fontSize: "1.3rem",
-                color: "black",
-                fontFamily: "monospace",
+                fontWeight: 'bold',
+                fontSize: '1.3rem',
+                color: 'black',
+                fontFamily: 'monospace',
               }}
             >
-             Social network
+               Social network
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
-              <Link
-                href="/"
-                color="text.secondary"
-                underline="hover"
-                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
-              >
-                <YouTubeIcon /> Comics
-              </Link>
-            </Box>
-            <Box my={{ xs: 1, sm: 2 }}>
-              <Link
+            <Link
                 href="/"
                 color="text.secondary"
                 underline="hover"
@@ -226,7 +211,17 @@ const Footer = () => {
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
-              <Link
+            <Link
+                href="/"
+                color="text.secondary"
+                underline="hover"
+                sx={{ fontSize: "0.9rem", fontFamily: "monospace" }}
+              >
+                <YouTubeIcon /> Comics
+              </Link>
+            </Box>
+            <Box my={{ xs: 1, sm: 2 }}>
+            <Link
                 href="/"
                 color="text.secondary"
                 underline="hover"
@@ -236,7 +231,7 @@ const Footer = () => {
               </Link>
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
-              <Link
+            <Link
                 href="/"
                 color="text.secondary"
                 underline="hover"
@@ -247,19 +242,26 @@ const Footer = () => {
             </Box>
             <Box my={{ xs: 1, sm: 2 }}>
               <Link
-                href="/"
-                color="inherit"
+                herf="/"
+                color="text.secondary"
                 underline="hover"
-                sx={{ fontSize: "0.9rem" }}
+                sx={{ fontSize: '0.9rem' }}
               ></Link>
             </Box>
           </Grid>
         </Grid>
-        <Box textAlign="center" pt={{ xs: 1, sm: 6 }} pb={{ xs: 1, sm: 2 }}>
-          &copy; © 2022 – 2022 ООО «Makers-Bootcamp»
+        <Box
+          textAlign="center"
+          color="text.secondary"
+          pt={{ xs: 1, sm: 6 }}
+          pb={{ xs: 1, sm: 2 }}
+        >
+          &copy;  © 2022 – 2022 ООО «Makers-Bootcamp»
         </Box>
+      
       </Container>
     </Box>
   );
 };
+
 export default Footer;
